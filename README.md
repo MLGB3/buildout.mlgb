@@ -18,9 +18,9 @@ git config --global user.name "name in quotes"
 Checkout the buildout
 ---------------------
 ```bash
-mkdir -p ~/sites/wordpress
-cd ~/sites/wordpress
-git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.django.git ./
+mkdir -p ~/sites/django
+cd ~/sites/django
+git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.mlgb.git ./
 ```
 Setup server
 ------------
