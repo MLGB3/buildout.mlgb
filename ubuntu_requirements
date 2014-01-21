@@ -1,7 +1,12 @@
 python-dev
 python-setuptools
 build-essential
+libsasl2-dev
 libssl-dev
 openssl
+libreadline-dev
+zlib1g-dev
+libbz2-dev
+libjpeg-dev
 libgtk2.0-dev
 
