@@ -1,3 +1,7 @@
+python-dev
+python-setuptools
 build-essential
 libssl-dev
+openssl
+libgtk2.0-dev
 
