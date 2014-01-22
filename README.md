@@ -32,17 +32,17 @@ Install Python
 --------------
 ```bash
 cd ~/Downloads
-wget http://www.python.org/ftp/python/2.6.5/Python-2.6.5.tgz
-tar zxfv Python-2.6.5.tgz
-cd Python-2.6.5
-./configure --prefix=/home/django/python/2.6.5
+wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+tar zxfv Python-2.7.6.tgz
+cd Python-2.7.6
+./configure --prefix=/home/django/python/2.7.6
 make
 make install
 cd ..
 wget http://python-distribute.org/distribute_setup.py
-~/python/2.6.5/bin/python distribute_setup.py
-~/python/2.6.5/bin/easy_install pip
-~/python/2.6.5/bin/pip install virtualenv
+~/python/2.7.6/bin/python distribute_setup.py
+~/python/2.7.6/bin/easy_install pip
+~/python/2.7.6/bin/pip install virtualenv
 ```
 Setup the buildout cache
 ------------------------
