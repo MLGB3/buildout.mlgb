@@ -8,6 +8,7 @@
 *.EGG-INFO
 .*.cfg
 *~
+buildout.cfg
 bin/
 build/
 develop-eggs/
