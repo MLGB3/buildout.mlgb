@@ -8,6 +8,7 @@
 *.EGG-INFO
 .*.cfg
 *~
+bootstrap.py
 buildout.cfg
 bin/
 build/
@@ -19,5 +20,6 @@ include/
 lib/
 parts/
 dist/
+src/
 var/
 
