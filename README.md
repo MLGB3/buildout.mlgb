@@ -53,15 +53,15 @@ mkdir eggs
 mkdir downloads
 mkdir extends
 echo "[buildout]
-eggs-directory = /home/wordpress/.buildout/eggs
-download-cache = /home/wordpress/.buildout/downloads
-extends-cache = /home/wordpress/.buildout/extends" >> ~/.buildout/default.cfg
+eggs-directory = /home/django/.buildout/eggs
+download-cache = /home/django/.buildout/downloads
+extends-cache = /home/django/.buildout/extends" >> ~/.buildout/default.cfg
 ```
 Create a virtualenv
 -------------------
 ```bash
-cd ~/sites/wordpress
-~/python/2.6.5/bin/virtualenv ./
+cd ~/sites/django
+~/python/2.7.6/bin/virtualenv ./
 source bin/activate
 pip install zc.buildout
 pip install distribute
