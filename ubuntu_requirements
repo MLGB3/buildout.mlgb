@@ -10,4 +10,5 @@ zlib1g-dev
 libbz2-dev
 libjpeg-dev
 libgtk2.0-dev
+libmysqlclient-dev
 

@@ -28,6 +28,7 @@ Setup server
 ```bash
 sudo apt-get install $(cat ubuntu_requirements)
 ```
+This will ask you to set a root mysql password.
 Install Python
 --------------
 ```bash
