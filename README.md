@@ -73,3 +73,8 @@ Run the buildout
 ```bash
 buildout -c development.cfg
 ```
+Start Apache
+------------
+```bash
+sudo ~/sites/django/parts/apache/bin/apachectl start
+```
