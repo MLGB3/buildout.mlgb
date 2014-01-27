@@ -1,5 +1,5 @@
 subversion
-python-dev
+python2.7-dev
 python-setuptools
 build-essential
 libtools
