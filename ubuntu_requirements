@@ -2,6 +2,7 @@ subversion
 python2.7-dev
 python-setuptools
 build-essential
+libapache2-mod-wsgi
 libtool
 libsasl2-dev
 libssl-dev
