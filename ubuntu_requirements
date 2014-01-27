@@ -2,7 +2,7 @@ subversion
 python2.7-dev
 python-setuptools
 build-essential
-libtools
+libtool
 libsasl2-dev
 libssl-dev
 openssl
