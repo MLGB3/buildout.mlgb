@@ -42,7 +42,7 @@ make
 make install
 cd ~/python/2.7.6/lib/python2.7/config
 ln -s ../../libpython2.7.so .
-cd ..
+cd ~/Downloads
 wget http://python-distribute.org/distribute_setup.py
 ~/python/2.7.6/bin/python distribute_setup.py
 ~/python/2.7.6/bin/easy_install pip
