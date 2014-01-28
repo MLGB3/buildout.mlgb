@@ -1,5 +1,5 @@
 subversion
-python2.7-dev
+python-dev
 python-setuptools
 build-essential
 libapache2-mod-wsgi
