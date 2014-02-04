@@ -24,7 +24,7 @@ SITE_ID = 1
 
 USE_I18N = True
 
-MEDIA_ROOT = '${buildout:directory}/media/'
+MEDIA_ROOT = '${buildout:directory}/static/media/'
 
 MEDIA_URL = 'http://localhost:1234/feeds/media/'
 
@@ -49,7 +49,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATE_DIRS = (
-    "${buildout:directory}/templates/"
+    "${buildout:directory}/static/templates/"
 )
 
 INSTALLED_APPS = (
