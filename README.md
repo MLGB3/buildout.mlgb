@@ -76,6 +76,19 @@ Run the buildout
 ```bash
 buildout -c development.cfg
 ```
+Create the database
+-------------------
+```bash
+CREATE DATABASE mlgb;
+GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "<password here>";
+FLUSH PRIVILEGES;
+EXIT
+```
+Import a MySQL dump into the database
+-------------------------------------
+```bash
+mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
+```
 Start Apache
 ------------
 ```bash
