@@ -76,6 +76,11 @@ Run the buildout
 ```bash
 buildout -c development.cfg
 ```
+Point the PYTHONPATH to Django
+------------------------------
+```bash
+export PYTHONPATH='/home/django/.buildout/eggs/Django-1.2-py2.7.egg/'
+```
 Create the database
 -------------------
 ```bash
