@@ -1,0 +1,35 @@
+pip install simplejson, MySQL-Python, Pillow, Django (as this may not have installed in the first place)
+
+added python-mysqldb to ubuntu reqs
+
+buildout apache seems to run apache2 confs in /etc/apache
+
+need to include /<django project>/httpd.conf, not local one (for now have sent httpd.conf to /etc/apache2)
+
+point python path to DIR that contains the django parent dir, not the parent dir itself!!!!!!!!
+
+changed mlgb.wsgi to append sys path with django and also the /mysite/apache root folder. This probably still needs to point to mysite.apache.
+settings, however.
+
+Copy sites-enabled and sites-available to parts/apache:
+cp -rf sites-available /home/django/sites/django/parts/apache/
+cp -rf sites-enabled /home/django/sites/django/parts/apache/
+
+Remove references to conf.d and ports.conf in apache.conf in /etc/apache2/
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE DATABASE mlgb;
+GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "blessing";
+FLUSH PRIVILEGES;
+EXIT
+
+
+sudo mount -t vboxsf vmsharedfolder ~/host
+
+mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
+
