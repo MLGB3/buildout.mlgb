@@ -91,16 +91,16 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 ```
 Insert WSGI setting
 -------------------
-Edit /etc/apache2/sites-available/default and add the following 
 ```bash
 <VirtualHost *:80>
 ...
 WSGIScriptAlias / "/home/django/sites/django/mysite/apache/mlgb.wsgi"
 ```
+Edit /etc/apache2/sites-available/default and add the above 
 Start Apache
 ------------
-You'll probably need to close the system apache first
 ```bash
 sudo apache2 stop
 sudo ~/sites/django/parts/apache/bin/apachectl start
 ```
+You'll probably need to close the system apache first
