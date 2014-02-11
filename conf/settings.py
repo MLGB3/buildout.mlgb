@@ -46,7 +46,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'mysite.apache.urls'
 
 TEMPLATE_DIRS = (
     "${buildout:directory}/static/templates/"
