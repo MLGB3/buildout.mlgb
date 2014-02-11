@@ -80,8 +80,8 @@ Download media and templates into static/ folder
 ------------------------------------------------
 ```bash
 cd /home/django/sites/django/static
-svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/www/mlgb/media ./
-svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/www/mlgb/templates ./
+svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/www/mlgb/media ./media
+svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/www/mlgb/templates ./templates
 ```
 Create the database
 -------------------
