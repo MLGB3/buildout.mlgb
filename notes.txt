@@ -35,3 +35,42 @@ sudo mount -t vboxsf vmsharedfolder ~/host
 
 mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 
+Installing JDK and solr
+--------------
+
+sudo apt-get install openjdk-6-jdk
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+export PATH=$PATH:/usr/lib/jvm/java-6-openjdk-amd64/bin
+
+solr
+----
+
+~/sites/django/parts/solr/solr$ rm -rf conf
+~/sites/django/parts/solr/solr$ svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/solr/ ./
+
+changed following in solrconfig.xml in /parts/solr/solr/conf from "/usr/share/..." to
+<dataDir>/home/django/sites/django/var/solr/data</dataDir> 
+<str name="config">/home/django/sites/django/parts/solr/solr/conf/data-config.xml</str>
+
+dpkg-query -L libmysql-java
+
+Added libmysql-java to ubuntu-requirements
+
+cp /usr/share/java/mysql-connector-java.jar ~/sites/django/parts/solr/lib
+cp /usr/share/java/mysql.jar ~/sites/django/parts/solr/lib
+
+start solr w/ home setting
+java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/solr/start.jar
+
+start initial full import
+http://0.0.0.0:1234/solr/dataimport?command=full-import
+
+put solr.xml (as follows) in /parts/solr/
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true" sharedLib="lib">
+  <cores adminPath="/admin/cores">
+    <core name="books" instanceDir="books" />
+    <core name="catalogues" instanceDir="catalogues" />
+  </cores>
+</solr>

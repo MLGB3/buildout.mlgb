@@ -15,4 +15,5 @@ libgtk2.0-dev
 libmysqlclient-dev
 mysql-server
 python-mysqldb
-
+java-6-openjdk-amd64
+libmysql-java
