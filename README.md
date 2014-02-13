@@ -95,6 +95,7 @@ Start Solr
 java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/start.jar
 ```
 Then visit the following two URLs to instigate a full import for books and catalogues
+
 ```bash
 http://0.0.0.0:1234/solr/books/dataimport?command=full-import
 http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
