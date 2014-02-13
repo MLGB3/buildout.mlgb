@@ -38,39 +38,31 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 Installing JDK and solr
 --------------
 
-sudo apt-get install openjdk-6-jdk
-export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
-export PATH=$PATH:/usr/lib/jvm/java-6-openjdk-amd64/bin
+X = buildout R = readme.md
 
-solr
-----
+X sudo apt-get install openjdk-6-jdk 
+X export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64   # using "collective.recipe.environment"
+X export PATH=$PATH:/usr/lib/jvm/java-6-openjdk-amd64/bin   # using "collective.recipe.environment"
 
 ~/sites/django/parts/solr/solr$ rm -rf conf
-~/sites/django/parts/solr/solr$ svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/solr/ ./
+X ~/sites/django/parts/solr/solr$ svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/solr/ ./
 
 changed following in solrconfig.xml in /parts/solr/solr/books/conf from "/usr/share/..." to
-<dataDir>/home/django/sites/django/parts/solr/solr/books/data</dataDir> 
-<str name="config">/home/django/sites/django/parts/solr/solr/books/conf/data-config.xml</str>
+X <dataDir>/home/django/sites/django/parts/solr/solr/books/data</dataDir> 
+X <str name="config">/home/django/sites/django/parts/solr/solr/books/conf/data-config.xml</str>
 
 changed following in solrconfig.xml in /parts/solr/solr/catalogues/conf from "/usr/share/..." to
-<dataDir>/home/django/sites/django/parts/solr/solr/catalogues/data</dataDir> 
-<str name="config">/home/django/sites/django/parts/solr/solr/catalogues/conf/data-config.xml</str>
+X <dataDir>/home/django/sites/django/parts/solr/solr/catalogues/data</dataDir> 
+X <str name="config">/home/django/sites/django/parts/solr/solr/catalogues/conf/data-config.xml</str>
 
 dpkg-query -L libmysql-java
 
-Added libmysql-java to ubuntu-requirements
+X Added libmysql-java to ubuntu-requirements
 
-cp /usr/share/java/mysql-connector-java.jar ~/sites/django/parts/solr/lib
-cp /usr/share/java/mysql.jar ~/sites/django/parts/solr/lib
+X cp /usr/share/java/mysql-connector-java.jar ~/sites/django/parts/solr/lib
+X cp /usr/share/java/mysql.jar ~/sites/django/parts/solr/lib
 
-start solr w/ home setting
-java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/start.jar
-
-start initial full import
-http://0.0.0.0:1234/solr/books/dataimport?command=full-import
-http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
-
-put solr.xml (as follows) in /parts/solr/solr/ (the jetty container instance)
+X put solr.xml (as follows) in /parts/solr/solr/ (the jetty container instance)
 
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="true" sharedLib="lib">
@@ -80,10 +72,16 @@ put solr.xml (as follows) in /parts/solr/solr/ (the jetty container instance)
   </cores>
 </solr>
 
-in /mysite/mlgb/config.py
+X in /mysite/mlgb/config.py
 
 change: 
 solr_host='localhost:8180'
 to:
 solr_host='0.0.0.0:1234'
 
+R start solr w/ home setting
+java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/start.jar
+
+R start initial full import
+http://0.0.0.0:1234/solr/books/dataimport?command=full-import
+http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import

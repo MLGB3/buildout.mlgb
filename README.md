@@ -76,13 +76,6 @@ Run the buildout
 ```bash
 buildout -c development.cfg
 ```
-Download media and templates into static/ folder
-------------------------------------------------
-```bash
-cd /home/django/sites/django/static
-svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/www/mlgb/media ./media
-svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/www/mlgb/templates ./templates
-```
 Create the database
 -------------------
 ```bash
@@ -96,14 +89,16 @@ Import a MySQL dump into the database
 ```bash
 mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 ```
-Insert WSGI setting
--------------------
+Start Solr
+----------
 ```bash
-<VirtualHost *:80>
-...
-WSGIScriptAlias / "/home/django/sites/django/mysite/apache/mlgb.wsgi"
+java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/start.jar
 ```
-Edit /etc/apache2/sites-available/default and add the above 
+Then visit the following two URLs to instigate a full import for books and catalogues
+```bash
+http://0.0.0.0:1234/solr/books/dataimport?command=full-import
+http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
+```
 Start Apache
 ------------
 ```bash
