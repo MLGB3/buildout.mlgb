@@ -24,7 +24,7 @@
        You may also set this to false using by setting the system property:
          -Dsolr.abortOnConfigurationError=false
      -->
-  <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
+  <abortOnConfigurationError>true</abortOnConfigurationError>
 
   <!-- Used to specify an alternate directory to hold all index data
        other than the default ./data under the Solr home.
