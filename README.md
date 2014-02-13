@@ -102,8 +102,9 @@ http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
 ```
 Start Apache
 ------------
+You'll probably need to close the system apache first
+
 ```bash
 sudo service apache2 stop
 sudo ~/sites/django/parts/apache/bin/apachectl start
 ```
-You'll probably need to close the system apache first
