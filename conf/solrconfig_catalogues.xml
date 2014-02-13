@@ -600,7 +600,7 @@
   <requestHandler name="/admin/properties" class="org.apache.solr.handler.admin.PropertiesRequestHandler" />
   <requestHandler name="/admin/file"       class="org.apache.solr.handler.admin.ShowFileRequestHandler" >
   
-  If you wish to hide files under ${solr.home}/conf, explicitly register the ShowFileRequestHandler using:
+  If you wish to hide files under <solr.home>/conf, explicitly register the ShowFileRequestHandler using:
   <requestHandler name="/admin/file" class="org.apache.solr.handler.admin.ShowFileRequestHandler" >
     <lst name="invariants">
      <str name="hidden">synonyms.txt</str> 
