@@ -48,9 +48,13 @@ solr
 ~/sites/django/parts/solr/solr$ rm -rf conf
 ~/sites/django/parts/solr/solr$ svn co https://damssupport.bodleian.ox.ac.uk/svn/mlgb3/trunk/solr/ ./
 
-changed following in solrconfig.xml in /parts/solr/solr/conf from "/usr/share/..." to
-<dataDir>/home/django/sites/django/var/solr/data</dataDir> 
-<str name="config">/home/django/sites/django/parts/solr/solr/conf/data-config.xml</str>
+changed following in solrconfig.xml in /parts/solr/solr/books/conf from "/usr/share/..." to
+<dataDir>/home/django/sites/django/parts/solr/solr/books/data</dataDir> 
+<str name="config">/home/django/sites/django/parts/solr/solr/books/conf/data-config.xml</str>
+
+changed following in solrconfig.xml in /parts/solr/solr/catalogues/conf from "/usr/share/..." to
+<dataDir>/home/django/sites/django/parts/solr/solr/catalogues/data</dataDir> 
+<str name="config">/home/django/sites/django/parts/solr/solr/catalogues/conf/data-config.xml</str>
 
 dpkg-query -L libmysql-java
 
@@ -60,12 +64,13 @@ cp /usr/share/java/mysql-connector-java.jar ~/sites/django/parts/solr/lib
 cp /usr/share/java/mysql.jar ~/sites/django/parts/solr/lib
 
 start solr w/ home setting
-java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/solr/start.jar
+java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/start.jar
 
 start initial full import
-http://0.0.0.0:1234/solr/dataimport?command=full-import
+http://0.0.0.0:1234/solr/books/dataimport?command=full-import
+http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
 
-put solr.xml (as follows) in /parts/solr/
+put solr.xml (as follows) in /parts/solr/solr/ (the jetty container instance)
 
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="true" sharedLib="lib">
@@ -74,3 +79,11 @@ put solr.xml (as follows) in /parts/solr/
     <core name="catalogues" instanceDir="catalogues" />
   </cores>
 </solr>
+
+in /mysite/mlgb/config.py
+
+change: 
+solr_host='localhost:8180'
+to:
+solr_host='0.0.0.0:1234'
+
