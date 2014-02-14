@@ -100,6 +100,15 @@ Then visit the following two URLs to instigate a full import for books and catal
 http://0.0.0.0:1234/solr/books/dataimport?command=full-import
 http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
 ```
+Edit VirtualHost file
+---------------------
+At sites-available/ edit the 'default' file and place the following line in as below
+
+```bash
+<VirtualHost *:80>
+    ...
+    WSGIScriptAlias / "/home/django/sites/django/mysite/apache/mlgb.wsgi"
+```
 Start Apache
 ------------
 You'll probably need to close the system apache first
