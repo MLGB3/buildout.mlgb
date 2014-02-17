@@ -61,8 +61,8 @@ eggs-directory = /home/django/.buildout/eggs
 download-cache = /home/django/.buildout/downloads
 extends-cache = /home/django/.buildout/extends" >> ~/.buildout/default.cfg
 ```
-Create a virtualenv
--------------------
+Create a virtualenv and run the buildout
+----------------------------------------
 ```bash
 cd ~/sites/django
 ~/python/2.7.6/bin/virtualenv ./
@@ -70,10 +70,6 @@ source bin/activate
 pip install zc.buildout
 pip install distribute
 buildout init
-```
-Run the buildout
-----------------
-```bash
 buildout -c development.cfg
 ```
 Create the database
