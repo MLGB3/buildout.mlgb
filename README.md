@@ -88,7 +88,8 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 Start Solr
 ----------
 ```bash
-java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar /home/django/sites/django/parts/solr/start.jar
+cd ~/sites/django/parts/solr/
+java -Dsolr.solr.=/home/django/sites/django/parts/solr/solr -jar start.jar
 ```
 Then visit the following two URLs to instigate a full import for books and catalogues
 
@@ -98,7 +99,7 @@ http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
 ```
 Edit VirtualHost file
 ---------------------
-At sites-available/ edit the 'default' file and place the following line in as below
+At /etc/apache2/sites-available/ edit the 'default' file and place the following line in as below
 
 ```bash
 <VirtualHost *:80>
