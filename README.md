@@ -111,5 +111,6 @@ You'll probably need to close the system apache first
 
 ```bash
 sudo service apache2 stop
-sudo ~/sites/django/parts/apache/bin/apachectl start
+cd ~/sites/django/parts/apache/bin
+sudo apachectl -f /home/django/sites/django/parts/apache/conf/httpd.conf start
 ```
