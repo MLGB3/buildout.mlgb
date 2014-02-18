@@ -1,4 +1,19 @@
-pip install simplejson, MySQL-Python, Pillow, Django (as this may not have installed in the first place)
+Completed 18.02.14
+
+Currently runs on jetty not tomcat, as it ships with solr. Versions need more specific pinning probably.
+
+Had to create git repos of static/ and svn trunk/ codebase because svn kept causing trouble with logins.
+
+Apachectl -V seems to suggest the main config file is /etc/apache2/apache2.conf, the httpd root being system
+
+However, the apache buildout recipe (reappropriated) places an include in the /parts/apache/conf/httpd.conf file. This includes
+a virtual_localhost.conf script in /parts/apache-setup/conf.d. I've no idea if this is relevant at all.
+
+It would seem to me that the default apache config may well simply be loading up the sites-available/ WSGI settings placed in default, and that everything else may be irrelevant. I'm going to systematically remove stuff and find out.
+
+---
+
+\pip install simplejson, MySQL-Python, Pillow, Django (as this may not have installed in the first place)
 
 added python-mysqldb to ubuntu reqs
 
