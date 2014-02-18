@@ -108,10 +108,10 @@ At /etc/apache2/sites-available/ edit the 'default' file and place the following
 ```
 Start Apache
 ------------
-You'll probably need to close the system apache first
+You'll need to close the system apache first
 
 ```bash
 sudo service apache2 stop
 cd ~/sites/django/parts/apache/bin
-sudo apachectl -f /home/django/sites/django/parts/apache/conf/httpd.conf start
+sudo apachectl start
 ```
