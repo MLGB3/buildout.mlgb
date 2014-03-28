@@ -30,7 +30,7 @@ Checkout the buildout
 ```bash
 mkdir -p ~/sites/bdlss
 cd ~/sites/bdlss
-git clone gitlab@source.bodleian.ox.ac.uk:bdlss/buildout.mlgb.git ./
+git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.mlgb.git ./
 ```
 Setup server
 ------------
@@ -39,6 +39,7 @@ Setup server
 sudo apt-get install $(cat ubuntu_requirements)
 ```
 This will ask you to set a root mysql password.
+
 Install Python
 --------------
 ```bash
