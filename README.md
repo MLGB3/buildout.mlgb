@@ -6,6 +6,7 @@ Create user "bdlss"
 ```bash
 sudo useradd bdlss
 sudo passwd bdlss
+su - bdlss
 mkdir -p /home/bdlss/.ssh
 ssh-keygen -t rsa
 ```
