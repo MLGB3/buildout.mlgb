@@ -1,6 +1,15 @@
 Installation
 ============
 
+Create user "bdlss"
+-------------------
+```bash
+sudo useradd bdlss
+sudo passwd bdlss
+mkdir -p /home/bdlss/.ssh
+ssh-keygen -t rsa
+```
+
 Download your key
 -----------------
 ```bash
@@ -15,6 +24,7 @@ sudo apt-get install git
 git config --global user.email "my@address.com"
 git config --global user.name "name in quotes"
 ```
+
 Checkout the buildout
 ---------------------
 ```bash
