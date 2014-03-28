@@ -83,7 +83,7 @@ Create a virtualenv and run the buildout
 ```bash
 cd ~/sites/bdlss
 ~/python/2.7.6/bin/virtualenv ./
-source bin/activate
+. bin/activate
 pip install zc.buildout
 pip install distribute
 buildout init
