@@ -33,11 +33,15 @@ mkdir -p ~/sites/bdlss
 cd ~/sites/bdlss
 git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.mlgb.git ./
 ```
+
 Setup server
 ------------
 
 ```bash
+su - <sudo user>
+sudo cp /home/bdlss/sites/bdlss/ubuntu_requirements ./
 sudo apt-get install $(cat ubuntu_requirements)
+su - bdlss
 ```
 This will ask you to set a root mysql password.
 
