@@ -127,6 +127,7 @@ Start Apache
 ------------
 
 ```bash
-cd ~/sites/bdlss/parts/apache/bin
-sudo apachectl start
+su - <sudo user>
+sudo /home/bdlss/sites/bdlss/parts/apache/bin/apachectl start
+su - bdlss
 ```
