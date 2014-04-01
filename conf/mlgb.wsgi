@@ -2,8 +2,8 @@ import os, sys
 
 os.environ['PYTHON_EGG_CACHE'] = '/tmp'
 
-sys.path.append('/home/django/.buildout/eggs/Django-1.2-py2.7.egg/')
-sys.path.append('/home/django/sites/django/')
+sys.path.append('/home/bdlss/.buildout/eggs/Django-1.2-py2.7.egg/')
+sys.path.append('/home/bdlss/sites/django/')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.apache.settings'
 
