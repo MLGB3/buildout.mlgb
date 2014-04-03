@@ -114,13 +114,33 @@ Then visit the following two URLs to instigate a full import for books and catal
 http://0.0.0.0:1234/solr/books/dataimport?command=full-import
 http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
 ```
-Edit httpd.conf
----------------
+Edit httpd.conf and jetty.xml
+-----------------------------
 At /home/bdlss/sites/bdlss/parts/apache/conf edit the httpd.conf file and place the following lines at the bottom:
 
 ```bash
 LoadModule wsgi_module modules/mod_wsgi.so
 Include /home/bdlss/sites/bdlss/mysite/apache/apache_django_wsgi.conf
+```
+In /home/bdlss/sites/bdlss/parts/solr/etc/jetty.xml add the following "host" line as shown below, otherwise your solr instance will run on 0.0.0.0 which is not recommended.
+
+```bash
+    <!-- Use this connector if NIO is not available. -->
+    <!-- This connector is currently being used for Solr because the
+         nio.SelectChannelConnector showed poor performance under WindowsXP
+         from a single client with non-persistent connections (35s vs ~3min)
+         to complete 10,000 requests)
+    -->
+    <Call name="addConnector">
+      <Arg>
+          <New class="org.mortbay.jetty.bio.SocketConnector">
+            <Set name="port">1234</Set>
+            <Set name="host">127.0.0.1</Set>
+            <Set name="maxIdleTime">50000</Set>
+            <Set name="lowResourceMaxIdleTime">1500</Set>
+          </New>
+      </Arg>
+    </Call>
 ```
 Start apache
 ------------
