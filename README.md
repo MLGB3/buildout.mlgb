@@ -141,8 +141,8 @@ java -Dsolr.solr.=/home/bdlss/sites/bdlss/parts/solr/solr -jar start.jar
 Then visit the following two URLs to instigate a full import for books and catalogues
 
 ```bash
-http://0.0.0.0:1234/solr/books/dataimport?command=full-import
-http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
+http://127.0.0.1:1234/solr/books/dataimport?command=full-import
+http://127.0.0.1:1234/solr/catalogues/dataimport?command=full-import
 ```
 
 Start apache
