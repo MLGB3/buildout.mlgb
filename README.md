@@ -114,16 +114,15 @@ Then visit the following two URLs to instigate a full import for books and catal
 http://0.0.0.0:1234/solr/books/dataimport?command=full-import
 http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
 ```
-Edit VirtualHost file
----------------------
-At /etc/apache2/sites-available/ edit the 'default' file and place the following line in as below
+Edit httpd.conf
+---------------
+At /home/bdlss/sites/bdlss/parts/apache/conf edit the httpd.conf file and place the following lines at the bottom:
 
 ```bash
-<VirtualHost *:80>
-    ...
-    WSGIScriptAlias / "/home/bdlss/sites/bdlss/mysite/apache/mlgb.wsgi"
+LoadModule wsgi_module modules/mod_wsgi.so
+Include /home/bdlss/sites/bdlss/mysite/apache/apache_django_wsgi.conf
 ```
-Start Apache
+Start apache
 ------------
 
 ```bash
