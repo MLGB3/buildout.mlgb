@@ -102,18 +102,7 @@ Import a MySQL dump into the database
 ```bash
 mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 ```
-Start Solr
-----------
-```bash
-cd ~/sites/bdlss/parts/solr/
-java -Dsolr.solr.=/home/bdlss/sites/bdlss/parts/solr/solr -jar start.jar
-```
-Then visit the following two URLs to instigate a full import for books and catalogues
 
-```bash
-http://0.0.0.0:1234/solr/books/dataimport?command=full-import
-http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
-```
 Edit httpd.conf and jetty.xml
 -----------------------------
 At /home/bdlss/sites/bdlss/parts/apache/conf edit the httpd.conf file and place the following lines at the bottom:
@@ -142,6 +131,20 @@ In /home/bdlss/sites/bdlss/parts/solr/etc/jetty.xml add the following "host" lin
       </Arg>
     </Call>
 ```
+
+Start Solr
+----------
+```bash
+cd ~/sites/bdlss/parts/solr/
+java -Dsolr.solr.=/home/bdlss/sites/bdlss/parts/solr/solr -jar start.jar
+```
+Then visit the following two URLs to instigate a full import for books and catalogues
+
+```bash
+http://0.0.0.0:1234/solr/books/dataimport?command=full-import
+http://0.0.0.0:1234/solr/catalogues/dataimport?command=full-import
+```
+
 Start apache
 ------------
 
