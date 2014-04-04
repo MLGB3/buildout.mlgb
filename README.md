@@ -107,16 +107,6 @@ Import a MySQL dump into the database
 mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 ```
 
-Edit httpd.conf
----------------
-
-At /home/bdlss/sites/bdlss/parts/apache/conf edit the httpd.conf file and place the following lines at the bottom:
-
-```bash
-LoadModule wsgi_module modules/mod_wsgi.so
-Include /home/bdlss/sites/bdlss/mysite/apache/apache_django_wsgi.conf
-```
-
 Start Solr
 ----------
 ```bash
