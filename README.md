@@ -148,6 +148,7 @@ Start apache
 ------------
 
 But first remove the system installation of Apache.
+
 ```bash
 su - <sudo user>
 sudo apt-get purge apache2*
