@@ -147,8 +147,10 @@ http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
 Start apache
 ------------
 
+But first remove the system installation of Apache.
 ```bash
 su - <sudo user>
+sudo apt-get purge apache2*
 cd /home/bdlss/sites/bdlss/parts/apache/bin/
 sudo ./apachectl start
 su - bdlss
