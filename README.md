@@ -135,7 +135,7 @@ Start Solr
 ----------
 ```bash
 cd ~/sites/bdlss/parts/solr/
-java -Dsolr.solr.=/home/bdlss/sites/bdlss/parts/solr/solr -jar start.jar
+java -Dsolr.solr.home=/home/bdlss/sites/bdlss/parts/solr/solr -jar start.jar
 ```
 Then visit the following two URLs (on the server using lynx?) to instigate a full import for books and catalogues
 
