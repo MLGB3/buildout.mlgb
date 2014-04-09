@@ -17,3 +17,8 @@ libmysqlclient-dev
 python-mysqldb
 openjdk-6-jdk
 libmysql-java
+python-imaging
+libfreetype6 
+libfreetype6-dev 
+libjpeg62-dev 
+zlib1g-dev
