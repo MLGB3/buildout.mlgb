@@ -43,7 +43,12 @@ sudo cp /home/bdlss/sites/bdlss/ubuntu_requirements ./
 sudo apt-get install $(cat ubuntu_requirements)
 su - bdlss
 ```
-This will ask you to set a root mysql password.
+This will ask you to set a root mysql password. The following do not work from the ubuntu_requirements file, so install them again as follows:
+
+```bash
+sudo apt-get install python-imaging
+sudo apt-get install libfreetype6 libfreetype6-dev libjpeg62-dev zlib1g-dev
+```
 
 Install Python
 --------------
