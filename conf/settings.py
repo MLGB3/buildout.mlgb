@@ -61,6 +61,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'mysite.books',
     'mysite.mlgb',
-    'mysite.feeds',
     
 )
