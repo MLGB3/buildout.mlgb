@@ -1,6 +1,7 @@
 subversion
 python-dev
 python-setuptools
+python-imaging
 build-essential
 libapache2-mod-wsgi
 libtool
@@ -8,6 +9,9 @@ libsasl2-dev
 libssl-dev
 openssl
 libreadline-dev
+libfreetype6 
+libfreetype6-dev 
+libjpeg62-dev 
 zlib1g-dev
 libbz2-dev
 libjpeg-dev
@@ -17,8 +21,3 @@ libmysqlclient-dev
 python-mysqldb
 openjdk-6-jdk
 libmysql-java
-python-imaging
-libfreetype6 
-libfreetype6-dev 
-libjpeg62-dev 
-zlib1g-dev
