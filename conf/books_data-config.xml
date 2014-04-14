@@ -1,0 +1,155 @@
+<dataConfig>
+
+ <dataSource type="JdbcDataSource" 
+             driver="com.mysql.jdbc.Driver" 
+             url="jdbc:mysql://localhost:3306/mlgb" 
+             batchSize="-1" 
+             convertType="true" 
+             user="mlgbAdmin" 
+             password="blessing"/>
+
+  <document>
+    <entity name="books" 
+      query="select books_book.id, 
+                    books_book.provenance_id, 
+                    books_book.modern_location_1_id, 
+                    books_book.modern_location_2_id, 
+                    books_book.shelfmark_1,
+                    books_book.shelfmark_2,
+                    books_book.shelfmark_sort,
+                    case 
+                      when trim( books_book.evidence_id ) = '' then
+                        'blank'
+                      else 
+                        trim( books_book.evidence_id )
+                    end 
+                      as evidence_id,
+                    books_book.author_title,
+                    books_book.date,
+                    books_book.date_sort,
+                    books_book.pressmark,
+                    case 
+                      when books_book.medieval_catalogue > '' then 
+                        medieval_catalogue
+                      else 
+                        books_book.medieval_catalogue_notes 
+                    end
+                      as medieval_catalogue,
+                    books_book.ownership,
+                    books_book.unknown,
+                    books_book.notes,
+                    books_book.evidence_notes,
+                    books_book.pr_bk
+             from books_book" >
+
+      <field column="id" name="id"/>
+      <field column="shelfmark_1"        name="sm1"/>
+      <field column="shelfmark_2"        name="sm2"/>
+      <field column="shelfmark_sort"     name="shelfmarksort"/>
+      <field column="evidence_id"        name="ev"/>
+      <field column="author_title"       name="soc"/>
+      <field column="date"               name="dt"/>
+      <field column="date_sort"          name="datesort"/>
+      <field column="pressmark"          name="pm"/>
+      <field column="medieval_catalogue" name="mc"/>
+      <field column="ownership"          name="own"/>
+      <field column="unknown"            name="uk"/>
+      <field column="notes"              name="nt"/>
+      <field column="evidence_notes"     name="evn"/>
+      <field column="pr_bk"              name="printed_book"/>
+
+      <entity name="cont"
+        query="select contains, urls
+               from books_contains 
+               where book_id_id ='${books.id}'">
+
+        <field column="contains" name="contents"/> 
+        <field column="urls" name="content_urls"/> 
+      </entity>
+
+      <entity name="pr"
+        query="select provenance, 
+                      upper( substr( provenance, 1, 1 ) ) as provenance_initial,
+                      replace( replace(
+                      concat( ifnull( provenance, '' ),
+                              ifnull( concat( ', ', county ), '' ),
+                              ifnull( concat( ', ', institution ), '' )), 
+                      '\n', '' ), '\r', '' )
+                      as provenance_full,
+                      IFNULL(county,'') as county, 
+                      IFNULL(institution,'') as institution,
+                      ifnull( cells, '' ) as prov_cells,
+                      ifnull( notes, '' ) as prov_notes
+               from books_provenance 
+               where id ='${books.provenance_id}'">
+
+        <field column="provenance" name="pr"/>
+        <field column="provenance_initial" name="pr_initial"/>
+        <field column="provenance_full" name="pr_full"/>
+        <field column="county" name="ct"/>
+        <field column="institution" name="ins"/>
+        <field column="prov_cells" name="prov_cells"/>
+        <field column="prov_notes" name="prov_notes"/>
+      </entity>
+
+      <entity name="ml1"
+        query="select modern_location_1,
+                      upper( substr( modern_location_1, 1, 1 ) ) as modern_location_1_initial
+               from books_modern_location_1 
+               where id ='${books.modern_location_1_id}'">
+
+        <field column="modern_location_1" name="ml1"/> 
+        <field column="modern_location_1_initial" name="ml1_initial"/> 
+      </entity>
+
+      <entity name="ml2"
+        query="select modern_location_2,
+                      upper( substr( modern_location_2, 1, 1 ) ) as modern_location_2_initial
+               from books_modern_location_2 
+               where id ='${books.modern_location_2_id}'">
+
+        <field column="modern_location_2" name="ml2"/> 
+        <field column="modern_location_2_initial" name="ml2_initial"/> 
+      </entity>
+
+      <entity name="ml1_and_2"
+        query="select replace( replace( 
+                      concat( ifnull( (select modern_location_2
+                                       from books_modern_location_2 
+                                       where id ='${books.modern_location_2_id}'), '' ),
+                              ifnull(  concat( ', ', 
+                                       (select modern_location_1
+                                       from books_modern_location_1 
+                                       where id ='${books.modern_location_1_id}')), '' )),
+               '\n', '' ), '\r', '' )
+               as modern_location_full">
+
+        <field column="modern_location_full" name="ml_full"/> 
+      </entity>
+
+      <entity name="evd"
+        query="select evidence_description 
+               from books_evidence
+               where evidence ='${books.evidence_id}'
+               union select evidence_description
+               from books_evidence
+               where trim(evidence) = '' and '${books.evidence_id}' = 'blank'">
+
+        <field column="evidence_description" name="evdesc"/> 
+      </entity>
+
+
+      <entity name="img"
+        query="select image, title, caption
+               from feeds_photo
+               where item_id ='${books.id}'">
+
+        <field column="image" name="imageurl"/> 
+        <field column="title" name="imagetitle"/> 
+        <field column="caption" name="imagecaption"/> 
+      </entity>
+
+    </entity> <!-- end entity "books" -->
+  </document>
+</dataConfig>
+

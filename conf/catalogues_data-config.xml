@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- here is where I will map all the fields on my xml using xpath -->
+
+<dataConfig>
+  <dataSource type="FileDataSource" encoding="UTF-8"/>
+  <document>
+      <entity name="catalogues"
+        processor="XPathEntityProcessor"
+        stream="true"
+        forEach="/doc/entry/"
+        url="/home/bdlss/sites/bdlss/parts/index/authortitle_to_solr.xml"
+        transformer="RegexTransformer,DateFormatTransformer"
+      >        
+        <field column="id" xpath="/doc/entry/@id"/>
+
+        <field column="solr_id_sort"         xpath="/doc/entry/solr_id_sort" /> 
+        <field column="sql_entry_id"         xpath="/doc/entry/sql_entry_id" /> 
+        <field column="sql_entry_book_count" xpath="/doc/entry/sql_entry_book_count" /> 
+        <field column="sql_copy_count"       xpath="/doc/entry/sql_copy_count" /> 
+
+        <field column="s_author_name" xpath="/doc/entry/entry_name"/>
+
+        <!-- from the 'entries' table -->
+        <field column="s_entry_name"         xpath="/doc/entry/s_entry_name" />
+        <field column="s_entry_xref_name"    xpath="/doc/entry/s_entry_xref_name" />
+        <field column="s_author_name"        xpath="/doc/entry/s_author_name" />
+        <field column="s_entry_biblio_line"  xpath="/doc/entry/s_entry_biblio_line" />
+        <field column="s_entry_biblio_block" xpath="/doc/entry/s_entry_biblio_block" />
+        <field column="s_entry_letter"       xpath="/doc/entry/sql_letter" />
+
+        <!-- from the 'books' table -->
+        <field column="s_title_of_book"      xpath="/doc/entry/s_title_of_book" />
+        <field column="s_xref_title_of_book" xpath="/doc/entry/s_xref_title_of_book" />
+        <field column="s_role_in_book"       xpath="/doc/entry/s_role_in_book" />
+        <field column="s_problem"            xpath="/doc/entry/s_problem" />
+        <field column="s_book_biblio_line"   xpath="/doc/entry/s_book_biblio_line" />
+
+        <!-- from the 'copies' table -->
+        <field column="s_copy_code"          xpath="/doc/entry/s_copy_code" />
+        <field column="s_copy_notes"         xpath="/doc/entry/s_copy_notes" />
+        <field column="s_printed_yn"         xpath="/doc/entry/s_printed_yn" />
+        <field column="s_survives_yn"        xpath="/doc/entry/s_survives_yn" />
+        <field column="s_uncertain_yn"       xpath="/doc/entry/s_uncertain_yn" />
+        <field column="s_duplicate_title_yn" xpath="/doc/entry/s_duplicate_title_yn" />
+
+        <!-- from the 'documents' table -->
+        <field column="s_document_code"      xpath="/doc/entry/s_document_code" />
+        <field column="s_document_code_sort" xpath="/doc/entry/s_document_code_sort" />
+        <field column="s_seqno_in_document"  xpath="/doc/entry/s_seqno_in_document" />
+        <field column="s_seqno_in_doc_sort"  xpath="/doc/entry/s_seqno_in_doc_sort" />
+        <field column="s_document_name"      xpath="/doc/entry/s_document_name" />
+
+        <!-- fields to sort on -->
+        <field column="d_document_end"       xpath="/doc/entry/d_document_end" />
+        <field column="d_document_start"     xpath="/doc/entry/d_document_start" />
+
+        <!-- fields to search on -->
+        <field column="s_document_start_year" xpath="/doc/entry/s_document_start_year" />
+        <field column="s_document_end_year"   xpath="/doc/entry/s_document_end_year" />
+        <field column="s_document_date_in_words"   xpath="/doc/entry/s_document_date_in_words" />
+
+        <field column="s_document_type"      xpath="/doc/entry/s_document_type" />
+
+        <!-- doc_group_type_name -->
+        <field column="s_library_type"       xpath="/doc/entry/s_library_type" />
+        <!-- doc_group_type_code -->
+        <field column="s_library_type_code"  xpath="/doc/entry/s_library_type_code" />
+        <!-- doc_group_name -->
+        <field column="s_library_loc"        xpath="/doc/entry/s_library_loc" />
+        <!-- doc_group_id -->
+        <field column="s_library_loc_id"     xpath="/doc/entry/s_library_loc_id" />
+
+        <!-- from the 'MLGB links' table -->
+        <field column="s_mlgb_book_id"       xpath="/doc/entry/s_mlgb_book_id" />
+      </entity>
+  </document>
+</dataConfig>
+
