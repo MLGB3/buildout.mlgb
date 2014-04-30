@@ -54,7 +54,7 @@ wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
 tar zxfv Python-2.7.6.tgz
 cd Python-2.7.6
 mkdir -p /home/bdlss/python/2.7.6/lib
-./configure --prefix=/home/bdlss/python/2.7.6 --enable-shared LDFLAGS="-Wl,-rpath /home/bdlss/python/2.7.6/lib"
+./configure --prefix=/home/bdlss/python/2.7.6 --enable-shared LDFLAGS="-Wl,-rpath=/home/bdlss/python/2.7.6/lib"
 make
 make install
 cd ~/python/2.7.6/lib/python2.7/config
