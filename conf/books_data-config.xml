@@ -61,7 +61,7 @@
       <entity name="cont"
         query="select contains, urls
                from books_contains 
-               where book_id_id ='${books.id}'">
+               where book_id_id ='${buildout:dollar}{books.id}'">
 
         <field column="contains" name="contents"/> 
         <field column="urls" name="content_urls"/> 
@@ -81,7 +81,7 @@
                       ifnull( cells, '' ) as prov_cells,
                       ifnull( notes, '' ) as prov_notes
                from books_provenance 
-               where id ='${books.provenance_id}'">
+               where id ='${buildout:dollar}{books.provenance_id}'">
 
         <field column="provenance" name="pr"/>
         <field column="provenance_initial" name="pr_initial"/>
@@ -96,7 +96,7 @@
         query="select modern_location_1,
                       upper( substr( modern_location_1, 1, 1 ) ) as modern_location_1_initial
                from books_modern_location_1 
-               where id ='${books.modern_location_1_id}'">
+               where id ='${buildout:dollar}{books.modern_location_1_id}'">
 
         <field column="modern_location_1" name="ml1"/> 
         <field column="modern_location_1_initial" name="ml1_initial"/> 
@@ -106,7 +106,7 @@
         query="select modern_location_2,
                       upper( substr( modern_location_2, 1, 1 ) ) as modern_location_2_initial
                from books_modern_location_2 
-               where id ='${books.modern_location_2_id}'">
+               where id ='${buildout:dollar}{books.modern_location_2_id}'">
 
         <field column="modern_location_2" name="ml2"/> 
         <field column="modern_location_2_initial" name="ml2_initial"/> 
@@ -116,11 +116,11 @@
         query="select replace( replace( 
                       concat( ifnull( (select modern_location_2
                                        from books_modern_location_2 
-                                       where id ='${books.modern_location_2_id}'), '' ),
+                                       where id ='${buildout:dollar}{books.modern_location_2_id}'), '' ),
                               ifnull(  concat( ', ', 
                                        (select modern_location_1
                                        from books_modern_location_1 
-                                       where id ='${books.modern_location_1_id}')), '' )),
+                                       where id ='${buildout:dollar}{books.modern_location_1_id}')), '' )),
                '\n', '' ), '\r', '' )
                as modern_location_full">
 
@@ -130,10 +130,10 @@
       <entity name="evd"
         query="select evidence_description 
                from books_evidence
-               where evidence ='${books.evidence_id}'
+               where evidence ='${buildout:dollar}{books.evidence_id}'
                union select evidence_description
                from books_evidence
-               where trim(evidence) = '' and '${books.evidence_id}' = 'blank'">
+               where trim(evidence) = '' and '${buildout:dollar}{books.evidence_id}' = 'blank'">
 
         <field column="evidence_description" name="evdesc"/> 
       </entity>
@@ -142,7 +142,7 @@
       <entity name="img"
         query="select image, title, caption
                from feeds_photo
-               where item_id ='${books.id}'">
+               where item_id ='${buildout:dollar}{books.id}'">
 
         <field column="image" name="imageurl"/> 
         <field column="title" name="imagetitle"/> 

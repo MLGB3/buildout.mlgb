@@ -9,7 +9,7 @@
         processor="XPathEntityProcessor"
         stream="true"
         forEach="/doc/entry/"
-        url="/home/bdlss/sites/bdlss/parts/index/authortitle_to_solr.xml"
+        url="/home/xiaofeng/index/authortitle_to_solr.xml"
         transformer="RegexTransformer,DateFormatTransformer"
       >        
         <field column="id" xpath="/doc/entry/@id"/>
