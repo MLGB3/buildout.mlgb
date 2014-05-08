@@ -1,6 +1,6 @@
 import subprocess
 
-subprocess.call('/home/xiaofeng/index/authortitle_to_xml.py')
+subprocess.call('python /home/mlgb/index/authortitle_to_xml.py', shell=True)
 
 def main():
     pass

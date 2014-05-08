@@ -1,13 +1,13 @@
 Installation
 ============
 
-Create user "xiaofeng"
+Create user "mlgb"
 -------------------
 ```bash
-sudo useradd xiaofeng
-sudo passwd xiaofeng
-su - xiaofeng
-mkdir -p /home/xiaofeng/.ssh
+sudo useradd mlgb
+sudo passwd mlgb
+su - mlgb
+mkdir -p /home/mlgb/.ssh
 ssh-keygen -t rsa
 ```
 
@@ -29,8 +29,8 @@ git config --global user.name "name in quotes"
 Checkout the buildout
 ---------------------
 ```bash
-mkdir -p ~/sites/xiaofeng
-cd ~/sites/xiaofeng
+mkdir -p ~/sites/mlgb
+cd ~/sites/mlgb
 git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.mlgb.git ./
 ```
 
@@ -41,7 +41,7 @@ This will ask you to set a root mysql password.
 
 ```bash
 su - <sudo user>
-sudo cp /home/xiaofeng/sites/xiaofeng/ubuntu_requirements ./
+sudo cp /home/mlgb/sites/mlgb/ubuntu_requirements ./
 sudo apt-get install $(cat ubuntu_requirements)
 ```
 
@@ -53,8 +53,8 @@ cd ~/Downloads
 wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
 tar zxfv Python-2.7.6.tgz
 cd Python-2.7.6
-mkdir -p /home/xiaofeng/python/2.7.6/lib
-./configure --prefix=/home/xiaofeng/python/2.7.6 --enable-shared LDFLAGS="-Wl,-rpath=/home/xiaofeng/python/2.7.6/lib"
+mkdir -p /home/mlgb/python/2.7.6/lib
+./configure --prefix=/home/mlgb/python/2.7.6 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.6/lib"
 make
 make install
 cd ~/python/2.7.6/lib/python2.7/config
@@ -75,15 +75,15 @@ mkdir eggs
 mkdir downloads
 mkdir extends
 echo "[buildout]
-eggs-directory = /home/xiaofeng/.buildout/eggs
-download-cache = /home/xiaofeng/.buildout/downloads
-extends-cache = /home/xiaofeng/.buildout/extends" >> ~/.buildout/default.cfg
+eggs-directory = /home/mlgb/.buildout/eggs
+download-cache = /home/mlgb/.buildout/downloads
+extends-cache = /home/mlgb/.buildout/extends" >> ~/.buildout/default.cfg
 ```
 
 Create a virtualenv and run the buildout
 ----------------------------------------
 ```bash
-cd ~/sites/xiaofeng
+cd ~/sites/mlgb
 ~/python/2.7.6/bin/virtualenv ./
 . bin/activate
 pip install zc.buildout
@@ -110,7 +110,7 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 Start Solr
 ----------
 ```bash
-java -Dsolr.solr.home=/home/xiaofeng/sites/xiaofeng/parts/solr/solr -jar ~/sites/xiaofeng/parts/solr/start.jar
+java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar ~/sites/mlgb/parts/solr/start.jar
 ```
 Then visit the following two URLs (on the server using lynx?) to instigate a full import for books and catalogues
 
@@ -127,7 +127,7 @@ But first remove the system installation of Apache.
 ```bash
 su - <sudo user>
 sudo apt-get purge apache2*
-cd /home/xiaofeng/sites/xiaofeng/parts/apache/bin/
+cd /home/mlgb/sites/mlgb/parts/apache/bin/
 sudo ./apachectl start
-su - xiaofeng
+su - mlgb
 ```
