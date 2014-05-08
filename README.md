@@ -53,7 +53,7 @@ cd ~/Downloads
 wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
 tar zxfv Python-2.7.6.tgz
 cd Python-2.7.6
-mkdir -p $HOME/python/2.7.6/lib
+mkdir -p ~/python/2.7.6/lib
 ./configure --prefix=$HOME/python/2.7.6 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.6/lib"
 make
 make install
