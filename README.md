@@ -110,7 +110,8 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 Start Solr
 ----------
 ```bash
-java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar /home/mlgb/sites/mlgb/parts/solr/start.jar
+cd /home/mlgb/sites/mlgb/parts/solr/
+java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
 ```
 Then visit the following two URLs (on the server using lynx?) to instigate a full import for books and catalogues
 
