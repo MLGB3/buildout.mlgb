@@ -71,7 +71,7 @@
       <Arg>
           <New class="org.mortbay.jetty.bio.SocketConnector">
             <Set name="port">1234</Set>
-            <Set name="host">127.0.1.1</Set>
+            <Set name="host">127.0.0.1</Set>
             <Set name="maxIdleTime">50000</Set>
             <Set name="lowResourceMaxIdleTime">1500</Set>
           </New>
