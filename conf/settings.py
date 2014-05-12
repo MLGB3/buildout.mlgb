@@ -26,7 +26,7 @@ USE_I18N = True
 
 MEDIA_ROOT = '${buildout:directory}/static/media/'
 
-MEDIA_URL = 'http://mlgb3-dev2.bodleian.ox.ac.uk/feeds/media/'
+MEDIA_URL = '/books/media/'
 
 ADMIN_MEDIA_PREFIX = '/media/'
 
