@@ -1,0 +1,2 @@
+00 23 * * *     /home/mlgb/sites/mlgb/parts/jobs/databasedump.sh blessing > /home/mlgb/sites/mlgb/parts/jobs/databasedump.log 2>&1
+55 23 * * *     export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
