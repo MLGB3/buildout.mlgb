@@ -2,6 +2,9 @@ subversion
 python-dev
 python-setuptools
 python-imaging
+wkhtmltopdf
+xvfb
+libicu48
 build-essential
 libapache2-mod-wsgi
 libtool
@@ -22,3 +25,5 @@ libmysqlclient-dev
 python-mysqldb
 openjdk-6-jdk
 libmysql-java
+curl
+imagemagick

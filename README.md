@@ -123,11 +123,10 @@ http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
 Start apache
 ------------
 
-But first give apache rights and then remove the system installation of Apache.
+Remove the system installation of Apache, then start our user instance of apache.
 
 ```bash
 su - <sudo user>
-sudo chown -r mlgb:www-data ~/sites/mlgb
 sudo apt-get purge apache2*
 cd /home/mlgb/sites/mlgb/parts/apache/bin/
 sudo ./apachectl start
