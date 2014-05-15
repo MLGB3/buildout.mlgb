@@ -26,7 +26,7 @@ git config --global user.email "my@address.com"
 git config --global user.name "name in quotes"
 ```
 
-Checkout the buildout
+Checkout  the buildout
 ---------------------
 ```bash
 mkdir -p ~/sites/mlgb
