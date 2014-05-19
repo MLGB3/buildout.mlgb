@@ -1,7 +1,9 @@
 
----Installation---
+Installation
+============
 
---Create user "mlgb"--
+Create user "mlgb"
+------------------
 
 ```bash
 sudo useradd mlgb
@@ -18,6 +20,7 @@ chmod 700 ~/.ssh/id_rsa
 ```
 
 Install and configure Git
+-------------------------
 
 ```bash
 sudo apt-get install git
@@ -26,6 +29,7 @@ git config --global user.name "name in quotes"
 ```
 
 Checkout the buildout
+---------------------
 
 ```bash
 mkdir -p ~/sites/mlgb
@@ -34,6 +38,7 @@ git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.mlgb.git ./
 ```
 
 Setup server
+------------
 
 This will ask you to set a root mysql password.
 
@@ -44,6 +49,7 @@ sudo apt-get install $(cat ubuntu_requirements)
 ```
 
 Install Python
+--------------
 
 ```bash
 mkdir -p ~/Downloads
@@ -65,6 +71,7 @@ wget http://python-distribute.org/distribute_setup.py
 ```
 
 Setup the buildout cache
+------------------------
 
 ```bash
 mkdir ~/.buildout
@@ -79,6 +86,7 @@ extends-cache = /home/mlgb/.buildout/extends" >> ~/.buildout/default.cfg
 ```
 
 Create a virtualenv and run the buildout
+----------------------------------------
 
 ```bash
 cd ~/sites/mlgb
@@ -91,6 +99,7 @@ buildout -c development.cfg
 ```
 
 Create the database
+-------------------
 
 ```bash
 CREATE DATABASE mlgb;
@@ -106,6 +115,7 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 ```
 
 Start Solr
+----------
 
 ```bash
 cd /home/mlgb/sites/mlgb/parts/solr/
@@ -113,6 +123,7 @@ java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
 ```
 
 Start apache
+------------
 
 Remove the system installation of Apache, then start our user instance of apache.
 
