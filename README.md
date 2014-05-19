@@ -122,10 +122,11 @@ cd /home/mlgb/sites/mlgb/parts/solr/
 java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
 ```
 
-Then run the cron jobs (these will run around midnight every night).
+Then visit the following two URLs (on the server using lynx?) to instigate a full import for books and catalogues
 
 ```bash
-export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
+http://127.0.1.1:1234/solr/books/dataimport?command=full-import
+http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
 ```
 
 Start apache
@@ -141,12 +142,12 @@ sudo ./apachectl start
 su - mlgb
 ```
 
-Then visit the following two URLs (on the server using lynx?) to instigate a full import for books and catalogues
+Then run the cron jobs (these will run around midnight every night).
 
 ```bash
-http://127.0.1.1:1234/solr/books/dataimport?command=full-import
-http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
+export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
 ```
+
 
 
 
