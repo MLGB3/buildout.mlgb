@@ -142,4 +142,10 @@ http://127.0.1.1:1234/solr/books/dataimport?command=full-import
 http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
 ```
 
+Finally, run the cron jobs (these will run around midnight every night).
+
+```bash
+cd ~/sites/mlgb/parts/jobs
+sh reindex.sh
+```
 
