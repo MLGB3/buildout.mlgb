@@ -145,7 +145,6 @@ http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
 Finally, run the cron jobs (these will run around midnight every night).
 
 ```bash
-cd ~/sites/mlgb/parts/jobs
-sh reindex.sh
+export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
 ```
 
