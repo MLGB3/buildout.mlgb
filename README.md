@@ -122,6 +122,12 @@ cd /home/mlgb/sites/mlgb/parts/solr/
 java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
 ```
 
+Then run the cron jobs (these will run around midnight every night).
+
+```bash
+export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
+```
+
 Start apache
 ------------
 
@@ -142,9 +148,5 @@ http://127.0.1.1:1234/solr/books/dataimport?command=full-import
 http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
 ```
 
-Finally, run the cron jobs (these will run around midnight every night).
 
-```bash
-export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
-```
 
