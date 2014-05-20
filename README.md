@@ -114,6 +114,19 @@ Import a MySQL dump into the database
 mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 ```
 
+Start apache
+------------
+
+Remove the system installation of Apache, then start our user instance of apache.
+
+```bash
+su - <sudo user>
+sudo apt-get purge apache2*
+cd /home/mlgb/sites/mlgb/parts/apache/bin/
+sudo ./apachectl start
+su - mlgb
+```
+
 Start Solr
 ----------
 
@@ -129,18 +142,7 @@ deactivate
 export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
 ```
 
-Start apache
-------------
 
-Remove the system installation of Apache, then start our user instance of apache.
-
-```bash
-su - <sudo user>
-sudo apt-get purge apache2*
-cd /home/mlgb/sites/mlgb/parts/apache/bin/
-sudo ./apachectl start
-su - mlgb
-```
 
 
 
