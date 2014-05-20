@@ -122,13 +122,6 @@ cd /home/mlgb/sites/mlgb/parts/solr/
 java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
 ```
 
-Then visit the following two URLs (on the server using lynx?) to instigate a full import for books and catalogues
-
-```bash
-http://127.0.1.1:1234/solr/books/dataimport?command=full-import
-http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import
-```
-
 Start apache
 ------------
 
