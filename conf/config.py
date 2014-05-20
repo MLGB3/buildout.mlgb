@@ -1,6 +1,6 @@
 from mysite.books.models import Book
 
-solr_host='0.0.0.0:1234'
+solr_host='127.0.1.1:1234'
 solr_base='/solr/books'
 solr_uname='solradmin'
 solr_pswd='blessing'
