@@ -122,6 +122,13 @@ cd /home/mlgb/sites/mlgb/parts/solr/
 java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
 ```
 
+Then run the cron jobs (these will run around midnight every night, you can check they've been set via "crontab -e"). When running this for the first time you must ensure you deactivate your virtualenv.
+
+```bash
+deactivate
+export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
+```
+
 Start apache
 ------------
 
@@ -133,13 +140,6 @@ sudo apt-get purge apache2*
 cd /home/mlgb/sites/mlgb/parts/apache/bin/
 sudo ./apachectl start
 su - mlgb
-```
-
-Then run the cron jobs (these will run around midnight every night, you can check they've been set via "crontab -e"). When running this for the first time you must ensure you deactivate your virtualenv.
-
-```bash
-deactivate
-export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
 ```
 
 
