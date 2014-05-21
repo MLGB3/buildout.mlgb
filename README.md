@@ -114,35 +114,20 @@ Import a MySQL dump into the database
 mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 ```
 
-Start apache
-------------
 
-Remove the system installation of Apache, then start our user instance of apache.
-
-```bash
-su - <sudo user>
-sudo apt-get purge apache2*
-cd /home/mlgb/sites/mlgb/parts/apache/bin/
-sudo ./apachectl start
-su - mlgb
-```
-
-Start Solr
-----------
+Move upstart conf to /etc/init/
+---------------------------------
 
 ```bash
-cd /home/mlgb/sites/mlgb/parts/solr/
-java -Dsolr.solr.home=/home/mlgb/sites/mlgb/parts/solr/solr -jar start.jar
+su - <your login>
+sudo mv /home/mlgb/sites/mlgb/parts/jobs/mlgb_upstart.conf /etc/init/mlgb_upstart.conf
 ```
 
-Then run the cron jobs (these will run around midnight every night, you can check they've been set via "crontab -e"). When running this for the purposes of installation you must ensure you deactivate your virtualenv.
+Supervisor will handle the initial loading of the solr daemon, apache, and run the reindex scripts.
 
-```bash
-deactivate
-export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
-```
+The upstart conf will run the mlgb_startup.sh script in /home/mlgb/sites/mlgb/parts/jobs on reboot.
 
-
+You should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk.
 
 
 
