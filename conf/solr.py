@@ -56,7 +56,7 @@ class SolrException(Exception):
 
 
 class SolrConnection:
-  def __init__(self, host='127.0.1.1:1234', solrBase=solr_base, username=None, password=None, persistent=True, postHeaders={}):
+  def __init__(self, host='${hosts:solr}:${ports:solr}', solrBase=solr_base, username=None, password=None, persistent=True, postHeaders={}):
     self.host = host
     self.solrBase = solrBase
     self.persistent = persistent

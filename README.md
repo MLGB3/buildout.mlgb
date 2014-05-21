@@ -13,10 +13,10 @@ mkdir -p /home/mlgb/.ssh
 ssh-keygen -t rsa
 ```
 
-Download your key
+Copy and paste your key into gitlab by choosing settings | add SSH key.
 
 ```bash
-chmod 700 ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa
 ```
 
 Install and configure Git
