@@ -125,7 +125,7 @@ sudo mv /home/mlgb/sites/mlgb/parts/jobs/mlgb_upstart.conf /etc/init/mlgb_upstar
 
 Supervisor will handle the initial loading of the solr daemon, apache, and run the reindex scripts.
 
-``bash
+```bash
 <Add notes for initialising supervisor>
 ```
 
