@@ -9,25 +9,12 @@
 # crashes. Output will be sent to /var/log/solr/solr.log. A pid file will be 
 # created in the standard location.
 
-start () {
+startnoindex () {
     echo -n "Starting solr..."
 
     # start solr daemon
     daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
     RETVAL=$?
-
-    echo -n "Running reindexing..."
-
-    # run reindexing
-    export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/parts/jobs/reindex.log 2>&1
-    RETVAL2=$?
-
-    echo -n "Starting apache..."
-
-    # start apache
-	${buildout:directory}/parts/apache/bin/apachectl start
-
-    RETVAL3=$?
 
     if [ $RETVAL = 0 ]
     then
@@ -36,12 +23,56 @@ start () {
         echo "Solr start failed. See error code for more information."
     fi
 
+    echo -n "Starting apache..."
+
+    # start apache
+    ${buildout:directory}/parts/apache/bin/apachectl start
+
+    RETVAL3=$?
+
+    if [ $RETVAL3 = 0 ]
+    then
+        echo "done."
+    else
+        echo "Apache start failed. See error code for more information."
+    fi
+
+    return $RETVAL
+}
+
+start () {
+    echo -n "Starting solr..."
+
+    # start solr daemon
+    daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
+    RETVAL=$?
+
+    if [ $RETVAL = 0 ]
+    then
+        echo "done."
+    else
+        echo "Solr start failed. See error code for more information."
+    fi
+
+    echo -n "Running reindexing..."
+
+    # run reindexing
+    export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/parts/jobs/reindex.log 2>&1
+    RETVAL2=$?
+
     if [ $RETVAL2 = 0 ]
     then
         echo "done."
     else
         echo "Reindex.sh start failed. See error code for more information."
     fi
+
+    echo -n "Starting apache..."
+
+    # start apache
+	${buildout:directory}/parts/apache/bin/apachectl start
+
+    RETVAL3=$?
 
     if [ $RETVAL3 = 0 ]
     then
@@ -61,18 +92,18 @@ stop () {
     daemon --stop --name=solr  --verbose
     RETVAL=$?
 
-    echo -n "Stopping apache..."
-
-    # stop apache
-	${buildout:directory}/parts/apache/bin/apachectl stop
-	$RETVAL2=$?
-
     if [ $RETVAL = 0 ]
     then
         echo "done."
     else
         echo "Solr stop failed. See error code for more information."
     fi
+
+    echo -n "Stopping apache..."
+
+    # stop apache
+	${buildout:directory}/parts/apache/bin/apachectl stop
+	$RETVAL2=$?
 
     if [ $RETVAL2 = 0 ]
     then
@@ -110,6 +141,9 @@ status () {
 
 
 case "$1" in
+    startnoindex)
+        startnoindex
+    ;;    
     start)
         start
     ;;
