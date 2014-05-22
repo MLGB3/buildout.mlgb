@@ -130,9 +130,9 @@ cd /home/mlgb/sites/mlgb/parts/jobs
 ./mlgbctl start 
 ```
 
-Other options for mlgbctl are stop and startnoindex (starts solr and apache only without running the reindex scripts).
+Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
 
-The upstart conf will run the mlgb_startup.sh script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot.
+The upstart conf will run the "mlgbctl [start]" script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot.
 
 You should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk.
 
