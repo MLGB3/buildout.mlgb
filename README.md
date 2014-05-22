@@ -123,13 +123,16 @@ su - <your login>
 sudo mv /home/mlgb/sites/mlgb/parts/jobs/mlgb_upstart.conf /etc/init/mlgb_upstart.conf
 ```
 
-Supervisor will handle the initial loading of the solr daemon, apache, and run the reindex scripts.
+Supervisor can handle the initial loading of the solr daemon, apache, and run the reindex scripts; alternatively you can run the start script yourself.
 
 ```bash
-<Add notes for initialising supervisor>
+cd /home/mlgb/sites/mlgb/parts/jobs
+./mlgbctl start 
 ```
 
-The upstart conf will run the mlgb_startup.sh script in /home/mlgb/sites/mlgb/parts/jobs on reboot.
+Other options for mlgbctl are stop and startnoindex (starts solr and apache only without running the reindex scripts).
+
+The upstart conf will run the mlgb_startup.sh script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot.
 
 You should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk.
 
