@@ -48,7 +48,7 @@ default.cfg
 Application
 -----------
 
-Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/** (this python is specific to the application and different to the system one). The application itself resides at **/home/mlgb/sites/mlgb/**.
+Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/** (this python is specific to the application and different to the system one). The application itself resides at **/home/mlgb/sites/mlgb/**. Many supporting services and non-Django scripts are kept in the parts directory at **/home/mlgb/sites/mlgb/parts/**.
 
 #### **Django**
 
@@ -60,7 +60,7 @@ The codebase is located in **/home/mlgb/sites/mlgb/mysite/**
 
 Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgb/mysite/apache/**
 
-A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette/**.
+A list of all installed Django eggs can be found via the Omelette directory in **/home/mlgb/sites/mlgb/parts/omelette/**.
 
 #### **Solr, Jetty, Apache, MySQL, Supervisor**
 
