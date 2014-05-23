@@ -68,7 +68,7 @@ Apache log files are in **parts/apache/logs/**
 
 Re-indexing log files are in **parts/jobs/**
 
-In the event of a reboot there is a reboot log in **parts/jobs/**
+In the event of a reboot there is a *reboot.log* in **parts/jobs/**
 
 Cron jobs
 ---------
