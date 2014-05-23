@@ -8,6 +8,11 @@ MLGB runs inside a virtualenv within the /home/mlgb/sites/mlgb/ directory. It ca
 deactivate
 ```
 
+Everything within the virtualenv, including Apache, runs under the application user, **mlgb**. Sudo rights are available to the developer logged into the machine and it may be necessary to switch from time to time. However, ensure any files produced as sudo/your own login are chowned as mlgb, the application user.
+
+Where is...?
+------------
+
 The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin/**
 
 The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/** (this is appended to the syspath in /home/mlgb/sites/mlgb/mysite/apache/mlgb.wsgi)
@@ -44,9 +49,11 @@ The action startnoindex will start solr and apache only.
 Log files
 ---------
 
-Log files for solr are in **parts/solr/logs/**
+Solr log files are in **parts/solr/logs/**
 
-Log files for reindexing are in **parts/jobs/**
+Apache log files are in **parts/apache/logs**
+
+Re-indexing log files are in **parts/jobs/**
 
 In the event of a reboot there is a reboot log in **parts/jobs/**
 
