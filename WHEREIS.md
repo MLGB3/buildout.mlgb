@@ -11,11 +11,11 @@ deactivate
 Everything within the virtualenv, including Apache, runs under the application user, **mlgb**. Sudo rights are available to the developer logged into the machine and it may be necessary to switch from time to time. However, ensure any files produced as sudo/your own login are chowned as mlgb, the application user.
 
 This document describes where the following aspects of the application stack are located
-- buildout, resultant files on server after running buildout
-- application, framework and services relied upon
-- run scripts, i.e. CLI scripts often to be run as cronjobs
-- log files
-- cron jobs, i.e. cron settings
+- **Buildout**, resultant files on server after running buildout
+- **Application**, framework and services relied upon
+- **Run scripts**, i.e. CLI scripts often to be run as cronjobs
+- **Log files**
+- **Cron jobs**, i.e. cron settings
 
 Buildout
 --------
