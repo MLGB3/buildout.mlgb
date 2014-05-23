@@ -10,6 +10,33 @@ deactivate
 
 Everything within the virtualenv, including Apache, runs under the application user, **mlgb**. Sudo rights are available to the developer logged into the machine and it may be necessary to switch from time to time. However, ensure any files produced as sudo/your own login are chowned as mlgb, the application user.
 
+Buildout
+--------
+
+The buildout scripts are located as follows. In the **home/mlgb/sites/mlgb/** directory we have the following:
+
+```bash
+buildouts/
+conf/
+bootstrap.py
+buildout.cfg
+development.cfg
+production.cfg
+ubuntu_requirements
+versions.cfg
+.installed.cfg
+.mr.developer.cfg
+```
+
+In /home/mlgb/.buildout we have the buildout cache, comprising:
+
+```bash
+downloads/
+eggs/
+extends/
+default.cfg
+```
+
 Application
 -----------
 
