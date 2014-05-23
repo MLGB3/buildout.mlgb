@@ -27,12 +27,6 @@ Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgb/m
 
 A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette/**.
 
-#### **Media**
-
-The static media is located in **/home/mlgb/sites/mlgb/static/**
-
-The admin media is currently located at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/django/contrib/admin/media/** though this may change
-
 #### **Solr, Jetty, Apache, MySQL**
 
 Solr and Apache are in the parts directory located at **/home/mlgb/sites/mlgb/parts/** under their respective names.
@@ -43,6 +37,11 @@ Jetty is packaged with solr in the **parts/solr/solr** directory.
 
 MySQL is system installed and runs on **localhost:3306**. It can be accessed via the mysql CLI. *IP/port can be changed in development/production.cfg.*
 
+#### **Media**
+
+The static media is located in **/home/mlgb/sites/mlgb/static/**
+
+The admin media is currently located at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/django/contrib/admin/media/** though this may change
 
 Run scripts
 -----------
