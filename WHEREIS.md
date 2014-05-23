@@ -13,7 +13,7 @@ Everything within the virtualenv, including Apache, runs under the application u
 Where is...?
 ------------
 
-Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/**. The application is in **/home/mlgb/sites/mlgb/**.
+Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/** (this python is specific to the application and different to the system one). The application itself resides at **/home/mlgb/sites/mlgb/**.
 
 The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin/**
 
