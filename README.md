@@ -118,11 +118,6 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 Move upstart conf to /etc/init/
 ---------------------------------
 
-```bash
-su - <your login>
-sudo mv /home/mlgb/sites/mlgb/parts/jobs/mlgb_upstart.conf /etc/init/mlgb_upstart.conf
-```
-
 Supervisor can handle the initial loading of the solr daemon, apache, and run the reindex scripts; alternatively you can run the start script yourself.
 
 ```bash
@@ -132,10 +127,13 @@ cd /home/mlgb/sites/mlgb/parts/jobs
 
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
 
-The upstart conf will run the "mlgbctl [start]" script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot.
+The @reboot command within the crontab will run the "mlgbctl startnoindex" script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot.
 
-You should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk.
+Please note: to run under 8080 on a development server you will have had to request the port via infrastructure services and entered the following command on your server to allow it:
 
+```bash
+ufw allow 8080/tcp
+```
 
-
+You should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
 
