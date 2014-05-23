@@ -62,7 +62,7 @@ Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgb/m
 
 A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette/**.
 
-#### **Solr, Jetty, Apache, MySQL**
+#### **Solr, Jetty, Apache, MySQL, Supervisor**
 
 Solr and Apache are in the parts directory located at **/home/mlgb/sites/mlgb/parts/** under their respective names.
 
