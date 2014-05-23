@@ -5,7 +5,7 @@ MLGB runs inside a virtualenv within the mlgb home directory.
 
 The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin**
 
-The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/** (this is appended to the syspath in mlgb.wsgi)
+The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/** (this is appended to the syspath in /home/mlgb/sites/mlgb/mysite/apache/mlgb.wsgi)
 
 The codebase is located in **/home/mlgb/sites/mlgb/mysite/**
 
