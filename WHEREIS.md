@@ -62,7 +62,7 @@ In the event of a reboot there is a reboot log in **parts/jobs/**
 Cron jobs
 ---------
 
-`crontab -e` will reveal the following:
+`crontab -e` (logged in as the application user) will reveal the following:
 
 ```bash
 @reboot /home/mlgb/sites/mlgb/jobs/mlgbctl startnoindex > ${buildout:directory}/parts/jobs/reboot.log 2>&1
