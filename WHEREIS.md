@@ -72,6 +72,8 @@ Jetty is packaged with solr in the **parts/solr/solr** directory.
 
 MySQL is system installed and runs on **localhost:3306**. It can be accessed via the mysql CLI. *IP/port can be changed in development/production.cfg.*
 
+Supervisor runs on **127.0.2.1:3306**. *IP/port can be changed in development/production.cfg.*
+
 #### **Media**
 
 The static media is located in **/home/mlgb/sites/mlgb/static/**
