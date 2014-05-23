@@ -23,7 +23,9 @@ Install and configure Git
 -------------------------
 
 ```bash
+su - <your login>
 sudo apt-get install git
+su - mlgb
 git config --global user.email "my@address.com"
 git config --global user.name "name in quotes"
 ```
