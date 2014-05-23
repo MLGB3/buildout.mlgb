@@ -14,7 +14,7 @@ The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs
 
 The codebase is located in **/home/mlgb/sites/mlgb/mysite/**
 
-Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgg/mysite/apache/**
+Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgb/mysite/apache/**
 
 The static media is located in **/home/mlgb/sites/mlgb/static/**
 
