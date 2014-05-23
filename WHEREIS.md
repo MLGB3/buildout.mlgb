@@ -1,7 +1,12 @@
 MLGB
 ----
 
-MLGB runs inside a virtualenv within the mlgb home directory.
+MLGB runs inside a virtualenv within the /home/mlgb/sites/mlgb directory. It can be activated and deactivated as follows:
+
+```bash
+. bin/activate
+deactivate
+```
 
 The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin**
 
