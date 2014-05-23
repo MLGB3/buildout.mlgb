@@ -37,7 +37,7 @@ The admin media is currently located at **/home/mlgb/.buildout/eggs/Django-1.2-p
 
 Solr and Apache are in the parts directory located at **/home/mlgb/sites/mlgb/parts/** under their respective names.
 
-Solr runs on **127.0.1.1:1234** and can be access on the server via lynx. *This can be changed in development/production.cfg.*
+Solr runs on **127.0.1.1:1234** and can be accessed on the server via lynx. *This can be changed in development/production.cfg.*
 
 Jetty is packaged with solr in the **parts/solr/solr** directory.
 
