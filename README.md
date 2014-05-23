@@ -48,6 +48,7 @@ This will ask you to set a root mysql password.
 su - <sudo user>
 sudo cp /home/mlgb/sites/mlgb/ubuntu_requirements ./
 sudo apt-get install $(cat ubuntu_requirements)
+su - mlgb
 ```
 
 Install Python
