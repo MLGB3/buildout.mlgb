@@ -8,7 +8,7 @@ MLGB runs inside a virtualenv within the /home/mlgb/sites/mlgb/ directory. It ca
 deactivate
 ```
 
-The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin**
+The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin/**
 
 The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/** (this is appended to the syspath in /home/mlgb/sites/mlgb/mysite/apache/mlgb.wsgi)
 
