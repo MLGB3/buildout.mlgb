@@ -10,8 +10,8 @@ deactivate
 
 Everything within the virtualenv, including Apache, runs under the application user, **mlgb**. Sudo rights are available to the developer logged into the machine and it may be necessary to switch from time to time. However, ensure any files produced as sudo/your own login are chowned as mlgb, the application user.
 
-Where is...?
-------------
+Application
+-----------
 
 Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/** (this python is specific to the application and different to the system one). The application itself resides at **/home/mlgb/sites/mlgb/**.
 
