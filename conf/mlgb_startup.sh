@@ -10,7 +10,7 @@
 # created in the standard location.
 
 startnoindex () {
-    echo -n "Starting solr..."
+    echo -n "Starting solr $(date)..."
 
     # start solr daemon
     daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
@@ -41,7 +41,7 @@ startnoindex () {
 }
 
 start () {
-    echo -n "Starting solr..."
+    echo -n "Starting solr $(date)..."
 
     # start solr daemon
     daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
@@ -86,7 +86,7 @@ start () {
 
 stop () {
     # stop daemon
-    echo -n "Stopping solr..."
+    echo -n "Stopping solr $(date)..."
 
     # stop solr daemon
     daemon --stop --name=solr  --verbose
@@ -103,7 +103,8 @@ stop () {
 
     # stop apache
 	${buildout:directory}/parts/apache/bin/apachectl stop
-	$RETVAL2=$?
+
+    RETVAL2=$?
 
     if [ $RETVAL2 = 0 ]
     then
@@ -118,7 +119,7 @@ stop () {
 
 restart () {
 
-    echo -n "Restarting solr..."
+    echo -n "Restarting solr $(date)..."
 
 	# restart solr daemon
     daemon --restart --name=solr  --verbose
