@@ -31,6 +31,8 @@ A list of all installed Django eggs can be found via the Omelette directory in *
 
 The static media is located in **/home/mlgb/sites/mlgb/static/**
 
+The admin media is currently located at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/django/contrib/admin/media/** though this may change
+
 #### **Solr, Apache, MySQL**
 
 Solr, apache and the indexing cron jobs are in the parts directory located at **/home/mlgb/sites/mlgb/parts/**
