@@ -115,8 +115,8 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 ```
 
 
-Startup script and port 8080
-----------------------------
+Startup script
+--------------
 
 Supervisor can handle the initial loading of the solr daemon, apache, and run the reindex scripts; alternatively you can run the start script yourself.
 
@@ -128,6 +128,9 @@ cd /home/mlgb/sites/mlgb/parts/jobs
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
 
 The @reboot command within the crontab will run the "mlgbctl startnoindex" script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot.
+
+Port 8080
+---------
 
 Please note: to run under 8080 on a development server you will have had to request the port via infrastructure services and entered the following command on your server to allow it:
 
