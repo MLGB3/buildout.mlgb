@@ -28,7 +28,7 @@ These are all located in **/home/mlgb/sites/mlgb/parts/jobs**.
 
 ### reindex.sh 
 
-This will run the reindexing process that is scheduled via cron.
+This will run the reindexing process that is scheduled via cron. Log files will be deposited in *parts/jobs* while many data files will be created in *parts/index*
 
 ### mlgbctl start | restart | stop | startnoindex
 
