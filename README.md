@@ -132,7 +132,7 @@ The @reboot command within the crontab will run the "mlgbctl startnoindex" scrip
 Port 8080
 ---------
 
-Please note: to run under 8080 on a development server you will have had to request the port via infrastructure services and entered the following command on your server to allow it:
+Please note: to run under 8080 on a development server you will need to request the port via infrastructure services and enter the following command on your server:
 
 ```bash
 ufw allow 8080/tcp

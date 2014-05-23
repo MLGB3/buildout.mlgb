@@ -119,12 +119,12 @@ stop () {
 
 restart () {
 
-    echo -n "Restarting solr $(date)..."
+    echo "Restarting solr $(date)..."
 
 	# restart solr daemon
     daemon --restart --name=solr  --verbose
 
-    echo -n "Restarting apache..."
+    echo "Restarting apache..."
 
     # restart apache
     ${buildout:directory}/parts/apache/bin/apachectl restart
@@ -133,7 +133,7 @@ restart () {
 
 status () {
 
-    echo -n "Solr daemon status..."
+    echo "Solr daemon status..."
 
     # report on the status of the daemon
     daemon --running --verbose --name=solr
