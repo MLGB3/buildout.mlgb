@@ -25,7 +25,7 @@ The codebase is located in **/home/mlgb/sites/mlgb/mysite/**
 
 Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgb/mysite/apache/**
 
-A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette**.
+A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette/**.
 
 #### **Media**
 
