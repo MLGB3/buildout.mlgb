@@ -13,6 +13,8 @@ Everything within the virtualenv, including Apache, runs under the application u
 Where is...?
 ------------
 
+Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/**. The application is in **/home/mlgb/sites/mlgb/**.
+
 The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin/**
 
 The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/** (this is appended to the syspath in /home/mlgb/sites/mlgb/mysite/apache/mlgb.wsgi)
