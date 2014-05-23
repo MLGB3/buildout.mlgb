@@ -53,7 +53,7 @@ Log files
 
 Solr log files are in **parts/solr/logs/**
 
-Apache log files are in **parts/apache/logs**
+Apache log files are in **parts/apache/logs/**
 
 Re-indexing log files are in **parts/jobs/**
 
@@ -62,7 +62,7 @@ In the event of a reboot there is a reboot log in **parts/jobs/**
 Cron jobs
 ---------
 
-crontab -e will reveal the following:
+`crontab -e` will reveal the following:
 
 ```bash
 @reboot /home/mlgb/sites/mlgb/jobs/mlgbctl startnoindex > ${buildout:directory}/parts/jobs/reboot.log 2>&1
