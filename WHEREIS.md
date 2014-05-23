@@ -32,7 +32,7 @@ This will run the reindexing process that is scheduled via cron. Log files will 
 
 ### mlgbctl start | restart | stop | startnoindex
 
-Start, restart and stop will control solr, apache and (in the case of start) run the reindex scripts (see above).
+Start, restart and stop will control solr, apache and (in the case of start) run the reindex.sh script (see above).
 
 startnoindex will start solr and apache.
 
