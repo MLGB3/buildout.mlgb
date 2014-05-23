@@ -9,11 +9,13 @@ The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs
 
 The codebase is located in **/home/mlgb/sites/mlgb/mysite/**
 
+Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgg/mysite/apache/**
+
 The static media is located in **/home/mlgb/sites/mlgb/static/**
 
 Solr, apache and the indexing cron jobs are in the parts directory located at **/home/mlgb/sites/mlgb/parts/**
 
-MySQL runs on **localhost:3306** and can be access via the mysql CLI. *This can be changed in development/production.cfg.*
+MySQL runs on **localhost:3306** and can be accessed via the mysql CLI. *This can be changed in development/production.cfg.*
 
 Solr runs on **127.0.1.1:1234** and can be access on the server via lynx. *This can be changed in development/production.cfg.*
 
@@ -28,7 +30,7 @@ This will run the reindexing process that is scheduled via cron.
 
 ### mlgbctl start | restart | stop | startnoindex
 
-start, restart and stop will control solr, apache and (in the case of start) run the reindex scripts.
+Start, restart and stop will control solr, apache and (in the case of start) run the reindex scripts.
 
 startnoindex will start solr and apache.
 
@@ -51,7 +53,7 @@ crontab -e will reveal the following:
 55 23 * * *     export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/parts/jobs/reindex.log 2>&1
 ```
 
-The first line specifies that, at startup/reboot, the server should run the parts/jobs/mlgbctl script with a parameter of startnoindex. This will ensure that apache and solr will re-serve the application in the event of a reboot/shutdown scenario. If the reindexing needs to be run this can be done via **parts/jobs/reindex.sh**.
+The first line specifies that, at startup/reboot, the server should run the parts/jobs/mlgbctl script with a parameter of *startnoindex*. This will ensure that apache and solr will re-serve the application in the event of a reboot/shutdown scenario. If the reindexing needs to be run this can be done via **parts/jobs/reindex.sh**.
 
 The second line schedules the **reindex.sh** script to run at 5 to midnight every night.
 
