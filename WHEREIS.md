@@ -26,11 +26,11 @@ Run scripts
 
 These are all located in **/home/mlgb/sites/mlgb/parts/jobs**.
 
-### reindex.sh 
+#### **reindex.sh** 
 
 This will run the reindexing process that is scheduled via cron. Log files will be deposited in *parts/jobs*, data files will be created in *parts/index*
 
-### mlgbctl start | restart | stop | startnoindex
+#### **mlgbctl start | restart | stop | startnoindex**
 
 Start, restart and stop will control solr, apache and (in the case of start) run the reindex.sh script (see above).
 
