@@ -27,6 +27,7 @@ versions.cfg
 .installed.cfg
 .mr.developer.cfg
 ```
+*.installed.cfg* will give you a useful breakdown of everything that happened during the last buildout execution.
 
 In /home/mlgb/.buildout we have the buildout cache (as created by running the buildout), comprising:
 
