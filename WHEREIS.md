@@ -13,7 +13,7 @@ Everything within the virtualenv, including Apache, runs under the application u
 Buildout
 --------
 
-The buildout scripts are located as follows. In the **home/mlgb/sites/mlgb/** directory we have the following:
+The buildout scripts are located as follows. Except *.installed.cfg* and *.mr.developer.cfg* this is your buildout as downloaded from the buildout repository. In the **home/mlgb/sites/mlgb/** directory we have the following:
 
 ```bash
 buildouts/
@@ -28,7 +28,7 @@ versions.cfg
 .mr.developer.cfg
 ```
 
-In /home/mlgb/.buildout we have the buildout cache, comprising:
+In /home/mlgb/.buildout we have the buildout cache (as created by running the buildout), comprising:
 
 ```bash
 downloads/
