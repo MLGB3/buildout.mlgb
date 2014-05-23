@@ -15,6 +15,8 @@ Where is...?
 
 Everything exists under **/home/mlgb/**. The virtualenv python install is in **/home/mlgb/python/** (this python is specific to the application and different to the system one). The application itself resides at **/home/mlgb/sites/mlgb/**.
 
+#### **Django**
+
 The Django controller scripts are located in **/home/mlgb/sites/mlgb/bin/**
 
 The Django eggs are located in the buildout cache at **/home/mlgb/.buildout/eggs/Django-1.2-py2.7.egg/** (this is appended to the syspath in /home/mlgb/sites/mlgb/mysite/apache/mlgb.wsgi)
@@ -23,7 +25,13 @@ The codebase is located in **/home/mlgb/sites/mlgb/mysite/**
 
 Django settings.py and all apache WSGI settings are in **/home/mlgb/sites/mlgb/mysite/apache/**
 
+A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette**.
+
+#### **Media**
+
 The static media is located in **/home/mlgb/sites/mlgb/static/**
+
+#### **Solr, Apache, MySQL**
 
 Solr, apache and the indexing cron jobs are in the parts directory located at **/home/mlgb/sites/mlgb/parts/**
 
@@ -31,7 +39,6 @@ MySQL runs on **localhost:3306** and can be accessed via the mysql CLI. *This ca
 
 Solr runs on **127.0.1.1:1234** and can be access on the server via lynx. *This can be changed in development/production.cfg.*
 
-A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette**.
 
 Run scripts
 -----------
