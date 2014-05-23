@@ -138,5 +138,7 @@ Please note: to run under 8080 on a development server you will have had to requ
 ufw allow 8080/tcp
 ```
 
-You should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
+In the case of a development machine (if you've run development.cfg) you should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
+
+If you're running a production machine you should be able to browse mlgb3-dev2.bodleian.ox.ac.uk.
 
