@@ -19,6 +19,8 @@ MySQL runs on **localhost:3306** and can be accessed via the mysql CLI. *This ca
 
 Solr runs on **127.0.1.1:1234** and can be access on the server via lynx. *This can be changed in development/production.cfg.*
 
+A list of all installed Django eggs can be found via the Omelette directory in **parts/omelette**.
+
 Run scripts
 -----------
 
