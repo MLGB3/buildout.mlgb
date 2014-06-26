@@ -133,7 +133,7 @@ Cron jobs and reboot script
 
 The @reboot command within the crontab will run the "mlgbctl startnoindex" script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot. It will log its out put in /home/mlgb/sites/mlgb/parts/jobs/reboot.log
 
-The reindex scripts runs every night.
+The reindex.sh script runs every night and carries out a number of tasks on top of reindexing solr.
 
 Port 8080
 ---------
