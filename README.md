@@ -120,7 +120,7 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql
 Startup script
 --------------
 
-Supervisor can handle the initial loading of the solr daemon, apache, and run the reindex scripts; alternatively you can run the start script yourself.
+Run the start script:
 
 ```bash
 cd /home/mlgb/sites/mlgb/parts/jobs
