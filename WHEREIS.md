@@ -113,7 +113,7 @@ Cron jobs
 
 ```bash
 @reboot /home/mlgb/sites/mlgb/jobs/mlgbctl startnoindex > /home/mlgb/sites/mlgb/parts/jobs/reboot.log 2>&1
-55 23 * * *     export MLGBADMINPW=blessing; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
+55 23 * * *     export MLGBADMINPW=XXXXXXXXXX; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
 ```
 
 The first line specifies that, at startup/reboot, the server should run the parts/jobs/mlgbctl script with a parameter of *startnoindex*. This will ensure that apache and solr will re-serve the application in the event of a reboot/shutdown scenario. If the reindexing needs to be run this can be done via **parts/jobs/reindex.sh**.
