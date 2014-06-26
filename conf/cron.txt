@@ -1,2 +1,2 @@
-@reboot /home/mlgb/sites/mlgb/jobs/mlgbctl startnoindex > ${buildout:directory}/parts/jobs/reboot.log 2>&1
+@reboot /home/mlgb/sites/mlgb/parts/jobs/mlgbctl startnoindex > ${buildout:directory}/parts/jobs/reboot.log 2>&1
 55 23 * * *     export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/parts/jobs/reindex.log 2>&1

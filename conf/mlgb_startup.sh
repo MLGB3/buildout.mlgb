@@ -44,7 +44,7 @@ start () {
     echo -n "Starting solr $(date)..."
 
     # start solr daemon
-    daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
+    daemon --chdir='${buildout:directory}/parts/solr' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
     RETVAL=$?
 
     if [ $RETVAL = 0 ]

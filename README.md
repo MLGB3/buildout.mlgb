@@ -46,8 +46,7 @@ This will ask you to set a root mysql password.
 
 ```bash
 su - <sudo user>
-sudo cp /home/mlgb/sites/mlgb/ubuntu_requirements ./
-sudo apt-get install $(cat ubuntu_requirements)
+sudo apt-get install $(cat /home/mlgb/sites/mlgb/ubuntu_requirements)
 su - mlgb
 ```
 
