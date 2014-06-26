@@ -36,7 +36,7 @@ Checkout the buildout
 ```bash
 mkdir -p ~/sites/mlgb
 cd ~/sites/mlgb
-git clone gitlab@source.bodleian.ox.ac.uk:django/buildout.mlgb.git ./
+git clone gitlab@source.bodleian.ox.ac.uk:mlgb/buildout.mlgb.git ./
 ```
 
 Setup server
