@@ -123,8 +123,7 @@ Startup script
 Run the start script:
 
 ```bash
-cd /home/mlgb/sites/mlgb/parts/jobs
-./mlgbctl start 
+/home/mlgb/sites/mlgb/parts/jobs/mlgbctl start 
 ```
 
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
