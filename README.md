@@ -128,18 +128,6 @@ Run the start script:
 
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
 
-Cron jobs and reboot script
-----------------------------
-
-In the command line enter:
-
-```bash
-crontab -e
-```
-
-The @reboot command within the crontab will run the "mlgbctl startnoindex" script in /home/mlgb/sites/mlgb/parts/jobs in the event of shutdown/reboot. It will log its out put in /home/mlgb/sites/mlgb/parts/jobs/reboot.log
-
-The reindex.sh script runs every night and carries out a number of tasks on top of reindexing solr.
 
 Port 8080
 ---------
