@@ -13,7 +13,7 @@ mkdir -p /home/mlgb/.ssh
 ssh-keygen -t rsa
 ```
 
-Copy and paste your key into gitlab by browsing to https://source.bodleian.ox.ac.uk/gitlab/django/buildout.mlgb, logging in, and choosing My Profile (the grey person graphic link in the top right hand corner) then Add Public Key.
+Copy and paste your key into gitlab by choosing My Profile (the grey person graphic link in the top right hand corner) then Add Public Key.
 
 ```bash
 cat ~/.ssh/id_rsa
