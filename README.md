@@ -100,6 +100,15 @@ buildout init
 buildout -c development.cfg
 ```
 
+Setup the reboot script in the sudo crontab
+-------------------------------------------
+
+```bash
+su - <sudo user>
+sudo crontab $HOME/sites/mlgb/bin/cron.txt
+su - mlgb
+```
+
 Create the database
 -------------------
 
