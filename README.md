@@ -2,6 +2,20 @@
 Installation
 ============
 
+Create user "mlgb"
+------------------
+```bash
+sudo useradd mlgb
+sudo passwd mlgb
+su - mlgb
+mkdir -p /home/mlgb/.ssh
+ssh-keygen -t rsa
+```
+Copy and paste your key into gitlab by choosing My Profile (the grey person graphic link in the top right hand corner) then Add Public Key.
+```bash
+cat ~/.ssh/id_rsa
+```
+
 Install and configure Git
 -------------------------
 
@@ -26,7 +40,8 @@ Setup server
 This will ask you to set a root mysql password.
 
 ```bash
-sudo apt-get install $(cat /home/mlgb/sites/mlgb/ubuntu_requirements)
+cd ~/sites/mlgb
+sudo apt-get install $(cat ubuntu_requirements)
 ```
 
 Install Python
