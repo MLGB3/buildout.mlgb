@@ -12,12 +12,13 @@ libsasl2-dev
 libssl-dev
 openssl
 libreadline-dev
-libfreetype6 
-libfreetype6-dev 
-libjpeg62-dev 
+libfreetype6
+libfreetype6-dev
 zlib1g-dev
 libbz2-dev
 libjpeg-dev
+libjpeg8-dev
+libjpeg-turbo8-dev
 libgtk2.0-dev
 mysql-server
 libmysqlclient-dev
@@ -27,3 +28,4 @@ libmysql-java
 curl
 imagemagick
 daemon
+
