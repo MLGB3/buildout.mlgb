@@ -12,6 +12,7 @@ mkdir -p /home/mlgb/.ssh
 ssh-keygen -t rsa
 ```
 Copy and paste your key into gitlab by choosing My Profile (the grey person graphic link in the top right hand corner) then Add Public Key.
+
 ```bash
 cat ~/.ssh/id_rsa
 ```
