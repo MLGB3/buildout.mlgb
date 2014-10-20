@@ -54,19 +54,18 @@ Install Python
 --------------
 
 ```bash
-mkdir -p ~/Downloads
 cd ~/Downloads
 wget http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
 tar zxfv Python-2.7.8.tgz
 cd Python-2.7.8
-mkdir -p ~/python/2.7.8/lib
-./configure --prefix=$HOME/python/2.7.8 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.8/lib"
+./configure --prefix=$HOME/python/2.7.8
 make
 make install
-cd ~/python/2.7.8/lib/python2.7/config
-ln -s ../../libpython2.7.so .
-cd ~/Downloads
-wget http://python-distribute.org/distribute_setup.py
+cd ..
+wget https://pypi.python.org/packages/source/d/distribute/distribute-0.7.3.zip
+unzip distribute-0.7.3.zip
+cd distribute-0.7.3
+~/python/2.7.8/bin/python setup.py install
 ~/python/2.7.8/bin/python distribute_setup.py
 ~/python/2.7.8/bin/easy_install pip
 ~/python/2.7.8/bin/pip install virtualenv
