@@ -18,8 +18,12 @@ eggs/
 fake-eggs/
 include/
 lib/
+mysite/
+mysite.apache/
 parts/
 dist/
+solr/
 src/
+static/
 var/
 
