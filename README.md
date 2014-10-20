@@ -5,8 +5,9 @@ Installation
 Create user "mlgb"
 ------------------
 ```bash
-sudo useradd mlgb
-sudo passwd mlgb
+sudo adduser mlgb
+```
+```bash
 su - mlgb
 mkdir -p /home/mlgb/.ssh
 ssh-keygen -t rsa
