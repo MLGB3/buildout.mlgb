@@ -1,4 +1,3 @@
-
 Installation
 ============
 
@@ -54,7 +53,7 @@ cd ~/Downloads
 wget http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
 tar zxfv Python-2.7.8.tgz
 cd Python-2.7.8
-./configure --prefix=$HOME/python/2.7.8 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.6/lib"
+./configure --prefix=$HOME/python/2.7.8 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.8/lib"
 make
 make install
 cd ..
@@ -145,4 +144,3 @@ ufw allow 8080/tcp
 In the case of a development machine (if you've run development.cfg) you should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
 
 If you're running a production machine you should be able to browse mlgb3-dev2.bodleian.ox.ac.uk.
-
