@@ -54,7 +54,7 @@ cd ~/Downloads
 wget http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
 tar zxfv Python-2.7.8.tgz
 cd Python-2.7.8
-./configure --prefix=$HOME/python/2.7.8
+./configure --prefix=$HOME/python/2.7.8 --enable-unicode=ucs4
 make
 make install
 cd ..
