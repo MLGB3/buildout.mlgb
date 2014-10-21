@@ -56,7 +56,9 @@ cd Python-2.7.8
 ./configure --prefix=$HOME/python/2.7.8 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.8/lib"
 make
 make install
-cd ..
+cd ~/python/2.7.6/lib/python2.7/config
+ln -s ../../libpython2.7.so .
+cd ~/Downloads
 wget https://pypi.python.org/packages/source/d/distribute/distribute-0.7.3.zip
 unzip distribute-0.7.3.zip
 cd distribute-0.7.3
