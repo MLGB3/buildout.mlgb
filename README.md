@@ -50,22 +50,22 @@ Install Python
 
 ```bash
 cd ~/Downloads
-wget http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
-tar zxfv Python-2.7.8.tgz
-cd Python-2.7.8
-./configure --prefix=$HOME/python/2.7.8 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.8/lib"
+wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+tar zxfv Python-2.7.6.tgz
+cd Python-2.7.6
+./configure --prefix=$HOME/python/2.7.6 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.6/lib"
 make
 make install
-cd ~/python/2.7.8/lib/python2.7/config
+cd ~/python/2.7.6/lib/python2.7/config
 ln -s ../../libpython2.7.so .
 cd ~/Downloads
 wget https://pypi.python.org/packages/source/d/distribute/distribute-0.7.3.zip
 unzip distribute-0.7.3.zip
 cd distribute-0.7.3
-~/python/2.7.8/bin/python setup.py install
-~/python/2.7.8/bin/python distribute_setup.py
-~/python/2.7.8/bin/easy_install pip
-~/python/2.7.8/bin/pip install virtualenv
+~/python/2.7.6/bin/python setup.py install
+~/python/2.7.6/bin/python distribute_setup.py
+~/python/2.7.6/bin/easy_install pip
+~/python/2.7.6/bin/pip install virtualenv
 ```
 
 Setup the buildout cache
@@ -88,7 +88,7 @@ Create a virtualenv and run the buildout
 
 ```bash
 cd ~/sites/mlgb
-~/python/2.7.8/bin/virtualenv --no-site-packages ./
+~/python/2.7.6/bin/virtualenv --no-site-packages ./
 . bin/activate
 pip install zc.buildout
 pip install distribute
@@ -146,3 +146,4 @@ ufw allow 8080/tcp
 In the case of a development machine (if you've run development.cfg) you should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
 
 If you're running a production machine you should be able to browse mlgb3-dev2.bodleian.ox.ac.uk.
+
