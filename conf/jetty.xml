@@ -193,7 +193,7 @@
     <Ref id="RequestLog">
       <Set name="requestLog">
         <New id="RequestLogImpl" class="org.mortbay.jetty.NCSARequestLog">
-          <Arg>/home/mlgb/sites/mlgb/parts/solr/logs/jetty-yyyy_mm_dd.request.log</Arg>
+          <Arg>${buildout:directory}/var/logs/jetty-yyyy_mm_dd.request.log</Arg>
           <Set name="retainDays">90</Set>
           <Set name="append">true</Set>
           <Set name="extended">false</Set>
