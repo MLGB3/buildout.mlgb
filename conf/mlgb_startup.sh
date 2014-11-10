@@ -13,7 +13,7 @@ startnoindex () {
     echo -n "Starting solr $(date)..."
 
     # start solr daemon
-    daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
+    daemon --chdir='${buildout:directory}/parts/solr/' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/var/logs/solr.log --name=solr --verbose
     RETVAL=$?
 
     if [ $RETVAL = 0 ]
@@ -44,7 +44,7 @@ start () {
     echo -n "Starting solr $(date)..."
 
     # start solr daemon
-    daemon --chdir='${buildout:directory}/parts/solr' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/parts/solr/logs/solr.log --name=solr --verbose
+    daemon --chdir='${buildout:directory}/parts/solr' --command "java -Dsolr.solr.home=${buildout:directory}/parts/solr/solr -jar start.jar" --respawn --output=${buildout:directory}/var/logs/solr.log --name=solr --verbose
     RETVAL=$?
 
     if [ $RETVAL = 0 ]
@@ -57,7 +57,7 @@ start () {
     echo -n "Running reindexing..."
 
     # run reindexing
-    export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/parts/jobs/reindex.log 2>&1
+    export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/var/logs/reindex.log 2>&1
     RETVAL2=$?
 
     if [ $RETVAL2 = 0 ]
@@ -164,3 +164,4 @@ case "$1" in
 esac
 
 exit $RETVAL
+
