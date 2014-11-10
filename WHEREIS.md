@@ -87,7 +87,7 @@ These are all located in **/home/mlgb/sites/mlgb/parts/jobs**.
 
 #### **reindex.sh** 
 
-This will run the reindexing process that is scheduled via cron. Log files will be deposited in *parts/jobs*, data files will be created in *parts/index*
+This will run the reindexing process that is scheduled via cron. Log files will be deposited in *var/logs*, data files will be created in *parts/index*
 
 #### **mlgbctl start | restart | stop | startnoindex**
 
@@ -98,13 +98,13 @@ The action startnoindex will start solr and apache only.
 Log files
 ---------
 
-Solr log files are in **parts/solr/logs/**
+Solr log files are in **var/logs/**
 
-Apache log files are in **parts/apache/logs/**
+Apache log files are in **var/logs/**
 
-Re-indexing log files are in **parts/jobs/**
+Re-indexing log files are in **var/logs/**
 
-In the event of a reboot there is a *reboot.log* in **parts/jobs/**
+In the event of a reboot there is a *reboot.log* in **var/logs/**
 
 Cron jobs
 ---------
@@ -112,12 +112,11 @@ Cron jobs
 `crontab -e` (logged in as the application user) will reveal the following:
 
 ```bash
-@reboot /home/mlgb/sites/mlgb/jobs/mlgbctl startnoindex > /home/mlgb/sites/mlgb/parts/jobs/reboot.log 2>&1
-55 23 * * *     export MLGBADMINPW=XXXXXXXXXX; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/parts/jobs/reindex.log 2>&1
+@reboot /home/mlgb/sites/mlgb/jobs/mlgbctl startnoindex > /home/mlgb/sites/mlgb/var/logs/reboot.log 2>&1
+55 23 * * *     export MLGBADMINPW=XXXXXXXXXX; /home/mlgb/sites/mlgb/parts/jobs/reindex.sh > /home/mlgb/sites/mlgb/var/logs/reindex.log 2>&1
 ```
 
 The first line specifies that, at startup/reboot, the server should run the parts/jobs/mlgbctl script with a parameter of *startnoindex*. This will ensure that apache and solr will re-serve the application in the event of a reboot/shutdown scenario. If the reindexing needs to be run this can be done via **parts/jobs/reindex.sh**.
 
 The second line schedules the **reindex.sh** script to run at 5 to midnight every night.
-
 
