@@ -1,4 +1,5 @@
 subversion
+unzip
 python-dev
 python-setuptools
 python-imaging
