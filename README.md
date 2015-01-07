@@ -111,7 +111,12 @@ su - mlgb
 Create the database
 -------------------
 
-Please see password in settings.py
+mysql root password as given during installation.
+
+```bash
+mysql --user=root --password=<password here>```
+
+Please see mlgbAdmin password in settings.py
 
 ```bash
 CREATE DATABASE mlgb;
