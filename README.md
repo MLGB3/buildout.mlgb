@@ -51,22 +51,22 @@ Install Python
 ```bash
 mkdir -p ~/Downloads
 cd ~/Downloads
-wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
-tar zxfv Python-2.7.6.tgz
-cd Python-2.7.6
-./configure --prefix=$HOME/python/2.7.6 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.6/lib"
+wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tgz
+tar zxfv Python-2.7.3.tgz
+cd Python-2.7.3
+./configure --prefix=$HOME/python/2.7.3 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.3/lib"
 make
 make install
-cd ~/python/2.7.6/lib/python2.7/config
+cd ~/python/2.7.3/lib/python2.7/config
 ln -s ../../libpython2.7.so .
 cd ~/Downloads
 wget https://pypi.python.org/packages/source/d/distribute/distribute-0.7.3.zip
 unzip distribute-0.7.3.zip
 cd distribute-0.7.3
-~/python/2.7.6/bin/python setup.py install
-~/python/2.7.6/bin/python distribute_setup.py
-~/python/2.7.6/bin/easy_install pip
-~/python/2.7.6/bin/pip install virtualenv
+~/python/2.7.3/bin/python setup.py install
+~/python/2.7.3/bin/python distribute_setup.py
+~/python/2.7.3/bin/easy_install pip
+~/python/2.7.3/bin/pip install virtualenv
 ```
 
 Setup the buildout cache
@@ -89,7 +89,7 @@ Create a virtualenv and run the buildout
 
 ```bash
 cd ~/sites/mlgb
-~/python/2.7.6/bin/virtualenv --no-site-packages ./
+~/python/2.7.3/bin/virtualenv --no-site-packages ./
 . bin/activate
 pip install zc.buildout
 pip install distribute
