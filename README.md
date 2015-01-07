@@ -1,6 +1,8 @@
 Installation
 ============
 
+Please note that MLGB currently only works on Ubuntu 12.0 with Python 2.7.3.
+
 Create user "mlgb"
 ------------------
 ```bash
