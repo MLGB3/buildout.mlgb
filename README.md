@@ -109,6 +109,8 @@ su - mlgb
 Create the database
 -------------------
 
+Please see password in settings.py
+
 ```bash
 CREATE DATABASE mlgb;
 GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "<password here>";
