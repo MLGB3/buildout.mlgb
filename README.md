@@ -91,7 +91,7 @@ Create a virtualenv and run the buildout
 
 ```bash
 cd ~/sites/mlgb
-~/python/2.7.3/bin/virtualenv --no-site-packages ./
+~/python/2.7.3/bin/virtualenv ./
 . bin/activate
 pip install zc.buildout
 pip install distribute
