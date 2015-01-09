@@ -3,6 +3,8 @@ Installation
 
 Please note that MLGB currently only works on Ubuntu 12.0 with Python 2.7.3.
 
+All re-indexing scripts (```/parts/jobs``` and ```/parts/index```) need linking to the MySQLdb egg either via an entry point or buildout templating - 9.1.15 CTB
+
 Create user "mlgb"
 ------------------
 ```bash
