@@ -3,7 +3,7 @@
 
 import sys
 
-sys.path.append('/home/${users:buildout-user}/sites/mlgb/parts/omelette/MySQLdb')
+sys.path.append('/home/${users:buildout-user}/.buildout/eggs/MySQL_python-1.2.5-py2.7-linux-x86_64.egg')
 
 import MySQLdb
 
