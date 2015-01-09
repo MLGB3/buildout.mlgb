@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 ##=====================================================================================
 
+import sys
+
 sys.path.append('/home/${users:buildout-user}/parts/omelette/MySQLdb')
 
-import sys
 import MySQLdb
 
 import connectToMLGB as c
