@@ -10,6 +10,7 @@
 *~
 bootstrap.py
 buildout.cfg
+pip-selfcheck.json
 bin/
 build/
 develop-eggs/
