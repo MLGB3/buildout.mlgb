@@ -57,7 +57,7 @@ start () {
     echo -n "Running reindexing..."
 
     # run reindexing
-    export MLGBADMINPW=blessing; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/var/logs/reindex.log 2>&1
+    export MLGBADMINPW=${passwords:mysql_user}; ${buildout:directory}/parts/jobs/reindex.sh > ${buildout:directory}/var/logs/reindex.log 2>&1
     RETVAL2=$?
 
     if [ $RETVAL2 = 0 ]

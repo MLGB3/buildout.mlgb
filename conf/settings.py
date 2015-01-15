@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('${admin-user:name}', '${admin-user:email}'),
 )
 
 MANAGERS = ADMINS
@@ -64,3 +64,4 @@ INSTALLED_APPS = (
     'mysite.mlgb',
     
 )
+

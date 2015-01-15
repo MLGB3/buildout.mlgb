@@ -5,8 +5,8 @@
              url="jdbc:mysql://${hosts:mysql}:${ports:mysql}/mlgb" 
              batchSize="-1" 
              convertType="true" 
-             user="mlgbAdmin" 
-             password="blessing"/>
+             user="${users:mysql_user}" 
+             password="${passwords:mysql_user}"/>
 
   <document>
     <entity name="books" 

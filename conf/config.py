@@ -2,8 +2,8 @@ from mysite.books.models import Book
 
 solr_host='${hosts:solr}:${ports:solr}'
 solr_base='/solr'
-solr_uname='solradmin'
-solr_pswd='blessing'
+solr_uname='${users:mysql_user}'
+solr_pswd='${passwords:mysql_user}'
 solr_commit='false'
 
 
