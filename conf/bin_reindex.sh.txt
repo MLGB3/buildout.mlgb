@@ -23,7 +23,7 @@ python /home/mlgb/sites/mlgb/parts/index/authortitle_to_xml.py > /home/mlgb/site
 echo ''
 
 echo 'Writing PDF version of MLGB books data'
-/home/mlgb/sites/mlgb/parts/jobs/write_pdf.sh > /home/mlgb/sites/mlgb/parts/jobs/write_pdf.log
+${buildout:directory}/bin/write_pdf.sh > ${buildout:directory}/var/logs/write_pdf.log
 echo ''
 
 
