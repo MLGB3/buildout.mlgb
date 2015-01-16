@@ -8,16 +8,16 @@ ${buildout:directory}/bin/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/
 
 echo 'Generating links from author/title index to MLGB book records...'
 cd /home/mlgb/sites/mlgb/parts/index
-python setIndexBookIDs.py > /home/mlgb/sites/mlgb/parts/jobs/IndexBookIDs.log 2>&1
+python setIndexBookIDs.py > ${buildout:directory}/var/logs/IndexBookIDs.log 2>&1
 
 echo 'Stripping out HTML/XML comments so they are not found by searches...'
-python /home/mlgb/sites/mlgb/parts/jobs/stripXMLcomments.py >> /home/mlgb/sites/mlgb/parts/jobs/stripXMLcomments.log 2>&1
+python /home/mlgb/sites/mlgb/parts/jobs/stripXMLcomments.py >> ${buildout:directory}/var/logs/stripXMLcomments.log 2>&1
 
 echo 'Stripping out unwanted formatting pasted from other websites...'
-python /home/mlgb/sites/mlgb/parts/jobs/stripUnwantedFormatting.py >> /home/mlgb/sites/mlgb/parts/jobs/stripUnwantedFormatting.log 2>&1
+python /home/mlgb/sites/mlgb/parts/jobs/stripUnwantedFormatting.py >> ${buildout:directory}/var/logs/stripUnwantedFormatting.log 2>&1
 
 echo 'Writing XML file for input into Solr catalogues index'
-python /home/mlgb/sites/mlgb/parts/index/authortitle_to_xml.py > /home/mlgb/sites/mlgb/parts/jobs/authortitle_to_xml.log
+python /home/mlgb/sites/mlgb/parts/index/authortitle_to_xml.py > ${buildout:directory}/var/logs/authortitle_to_xml.log
 echo ''
 
 echo 'Writing PDF version of MLGB books data'
@@ -26,15 +26,15 @@ echo ''
 
 
 echo 'Rewriting static HTML for author/title index...'
-python writeHTML.py > /home/mlgb/sites/mlgb/parts/jobs/writeHTML.log 2>&1
+python writeHTML.py > ${buildout:directory}/var/logs/writeHTML.log 2>&1
 
 echo 'Rewriting static HTML for list of medieval catalogues...'
-python cataloguesHTML.py > /home/mlgb/sites/mlgb/parts/jobs/cataloguesHTML.log 2>&1
+python cataloguesHTML.py > ${buildout:directory}/var/logs/cataloguesHTML.log 2>&1
 
 echo 'Taking archive copy of images, then resizing for web display...'
 ${buildout:directory}/bin/process_photos.sh >> ${buildout:directory}/var/logs/process_photos.log 2>&1
 
 echo 'Reindexing Solr...'
-curl http://127.0.1.1:1234/solr/books/dataimport?command=full-import > /home/mlgb/sites/mlgb/parts/jobs/solrimport.log 2>&1
-curl http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import >> /home/mlgb/sites/mlgb/parts/jobs/solrimport.log 2>&1
+curl http://127.0.1.1:1234/solr/books/dataimport?command=full-import > ${buildout:directory}/var/logs/solrimport.log 2>&1
+curl http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import >> ${buildout:directory}/var/logs/solrimport.log 2>&1
 
