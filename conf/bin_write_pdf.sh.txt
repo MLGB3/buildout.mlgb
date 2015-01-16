@@ -8,7 +8,7 @@ python write_static_mlgb.py
 
 cd ${buildout:directory}/static/media/pdf
 
-${buildout:directory}/bin/wkhtmltopdf.sh --encoding utf8 mlgb3.html mlgb3.pdf
+${buildout:bin-directory}/wkhtmltopdf.sh --encoding utf8 mlgb3.html mlgb3.pdf
 
 chown mlgb mlgb3.*
 chgrp mlgb mlgb3.*

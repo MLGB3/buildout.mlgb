@@ -1,10 +1,10 @@
 #! /bin/bash
 
 echo 'Enabling numeric sorting by shelfmark...'
-${buildout:directory}/bin/set_shelfmark_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_shelfmark_sort.log 2>&1
+${buildout:bin-directory}/set_shelfmark_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_shelfmark_sort.log 2>&1
 
 echo 'Enabling sorting by date...'
-${buildout:directory}/bin/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_date_sort.log 2>&1
+${buildout:bin-directory}/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_date_sort.log 2>&1
 
 echo 'Generating links from author/title index to MLGB book records...'
 cd /home/mlgb/sites/mlgb/parts/index
@@ -21,7 +21,7 @@ python /home/mlgb/sites/mlgb/parts/index/authortitle_to_xml.py > ${buildout:dire
 echo ''
 
 echo 'Writing PDF version of MLGB books data'
-${buildout:directory}/bin/write_pdf.sh > ${buildout:directory}/var/logs/write_pdf.log
+${buildout:bin-directory}/write_pdf.sh > ${buildout:directory}/var/logs/write_pdf.log
 echo ''
 
 
@@ -32,7 +32,7 @@ echo 'Rewriting static HTML for list of medieval catalogues...'
 python cataloguesHTML.py > ${buildout:directory}/var/logs/cataloguesHTML.log 2>&1
 
 echo 'Taking archive copy of images, then resizing for web display...'
-${buildout:directory}/bin/process_photos.sh >> ${buildout:directory}/var/logs/process_photos.log 2>&1
+${buildout:bin-directory}/process_photos.sh >> ${buildout:directory}/var/logs/process_photos.log 2>&1
 
 echo 'Reindexing Solr...'
 curl http://127.0.1.1:1234/solr/books/dataimport?command=full-import > ${buildout:directory}/var/logs/solrimport.log 2>&1
