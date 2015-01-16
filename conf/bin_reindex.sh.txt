@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo 'Enabling numeric sorting by shelfmark...'
-/home/mlgb/sites/mlgb/mysite/books/set_shelfmark_sort.sh $MLGBADMINPW > /home/mlgb/sites/mlgb/parts/jobs/set_shelfmark_sort.log 2>&1
+${buildout:directory}/bin/set_shelfmark_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_shelfmark_sort.log 2>&1
 
 echo 'Enabling sorting by date...'
 /home/mlgb/sites/mlgb/mysite/books/set_date_sort.sh $MLGBADMINPW > /home/mlgb/sites/mlgb/parts/jobs/set_date_sort.log 2>&1
