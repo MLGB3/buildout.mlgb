@@ -8,28 +8,27 @@ ${buildout:bin-directory}/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/
 
 echo 'Generating links from author/title index to MLGB book records...'
 cd /home/mlgb/sites/mlgb/parts/index
-${buildout:bin-directory}/python setIndexBookIDs.py > ${buildout:directory}/var/logs/IndexBookIDs.log 2>&1
+${buildout:bin-directory}/set_index_book_ids > ${buildout:directory}/var/logs/IndexBookIDs.log 2>&1
 
 echo 'Stripping out HTML/XML comments so they are not found by searches...'
-${buildout:bin-directory}/python /home/mlgb/sites/mlgb/parts/jobs/stripXMLcomments.py >> ${buildout:directory}/var/logs/stripXMLcomments.log 2>&1
+${buildout:bin-directory}/strip_xml_comments >> ${buildout:directory}/var/logs/stripXMLcomments.log 2>&1
 
 echo 'Stripping out unwanted formatting pasted from other websites...'
-python /home/mlgb/sites/mlgb/parts/jobs/stripUnwantedFormatting.py >> ${buildout:directory}/var/logs/stripUnwantedFormatting.log 2>&1
+${buildout:bin-directory}/strip_unwanted_tags >> ${buildout:directory}/var/logs/stripUnwantedFormatting.log 2>&1
 
 echo 'Writing XML file for input into Solr catalogues index'
-python /home/mlgb/sites/mlgb/parts/index/authortitle_to_xml.py > ${buildout:directory}/var/logs/authortitle_to_xml.log
+${buildout:bin-directory}/write_xml > ${buildout:directory}/var/logs/authortitle_to_xml.log
 echo ''
 
 echo 'Writing PDF version of MLGB books data'
 ${buildout:bin-directory}/write_pdf.sh > ${buildout:directory}/var/logs/write_pdf.log
 echo ''
 
-
 echo 'Rewriting static HTML for author/title index...'
-python writeHTML.py > ${buildout:directory}/var/logs/writeHTML.log 2>&1
+${buildout:bin-directory}/write_html > ${buildout:directory}/var/logs/writeHTML.log 2>&1
 
 echo 'Rewriting static HTML for list of medieval catalogues...'
-python cataloguesHTML.py > ${buildout:directory}/var/logs/cataloguesHTML.log 2>&1
+${buildout:bin-directory}/catalogues_html > ${buildout:directory}/var/logs/cataloguesHTML.log 2>&1
 
 echo 'Taking archive copy of images, then resizing for web display...'
 ${buildout:bin-directory}/process_photos.sh >> ${buildout:directory}/var/logs/process_photos.log 2>&1
