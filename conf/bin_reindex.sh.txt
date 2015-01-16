@@ -4,7 +4,7 @@ echo 'Enabling numeric sorting by shelfmark...'
 ${buildout:directory}/bin/set_shelfmark_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_shelfmark_sort.log 2>&1
 
 echo 'Enabling sorting by date...'
-/home/mlgb/sites/mlgb/mysite/books/set_date_sort.sh $MLGBADMINPW > /home/mlgb/sites/mlgb/parts/jobs/set_date_sort.log 2>&1
+${buildout:directory}/bin/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_date_sort.log 2>&1
 
 echo 'Generating links from author/title index to MLGB book records...'
 cd /home/mlgb/sites/mlgb/parts/index
