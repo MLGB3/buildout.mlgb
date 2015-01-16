@@ -8,10 +8,10 @@ ${buildout:bin-directory}/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/
 
 echo 'Generating links from author/title index to MLGB book records...'
 cd /home/mlgb/sites/mlgb/parts/index
-python setIndexBookIDs.py > ${buildout:directory}/var/logs/IndexBookIDs.log 2>&1
+${buildout:bin-directory}/python setIndexBookIDs.py > ${buildout:directory}/var/logs/IndexBookIDs.log 2>&1
 
 echo 'Stripping out HTML/XML comments so they are not found by searches...'
-python /home/mlgb/sites/mlgb/parts/jobs/stripXMLcomments.py >> ${buildout:directory}/var/logs/stripXMLcomments.log 2>&1
+${buildout:bin-directory}/python /home/mlgb/sites/mlgb/parts/jobs/stripXMLcomments.py >> ${buildout:directory}/var/logs/stripXMLcomments.log 2>&1
 
 echo 'Stripping out unwanted formatting pasted from other websites...'
 python /home/mlgb/sites/mlgb/parts/jobs/stripUnwantedFormatting.py >> ${buildout:directory}/var/logs/stripUnwantedFormatting.log 2>&1
