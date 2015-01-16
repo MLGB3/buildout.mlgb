@@ -8,8 +8,8 @@
 # as the original files are owned by www-data having been uploaded via web.
 #===================================================================================================
 
-indir=/home/mlgb/sites/mlgb/static/media/photos
-outdir=/home/mlgb/sites/mlgb/static/media/photos_archive
+indir=${buildout:directory}/static/media/photos
+outdir=${buildout:directory}/static/media/photos_archive
 
 new_width=1000
 archive_file_owner=mlgb
@@ -19,14 +19,14 @@ for f in $(ls | grep -v "\.thumb\.")
 do
   if [ -f $f ]
   then
-    archive_file=${outdir}/$f
+    archive_file=${buildout:dollar}{outdir}/$f
     if [ ! -f $archive_file ]
     then
       echo "Archiving original version of $f to $outdir"
       cp $f $archive_file
 
       echo "Creating smaller version of $f for web display"
-      convert $f -resize ${new_width}\> $f  # the \> flag means 'only shrink, never enlarge'
+      convert $f -resize ${buildout:dollar}{new_width}\> $f  # the \> flag means 'only shrink, never enlarge'
 
       chown $archive_file_owner $archive_file
       chgrp $archive_file_owner $archive_file
