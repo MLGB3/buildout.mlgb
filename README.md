@@ -123,7 +123,7 @@ Please see mlgbAdmin password in settings.py
 
 ```bash
 CREATE DATABASE mlgb;
-GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "<password here>";
+GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "mlgb";
 FLUSH PRIVILEGES;
 EXIT
 ```
@@ -159,4 +159,9 @@ ufw allow 8080/tcp
 In the case of a development machine (if you've run development.cfg) you should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
 
 If you're running a production machine you should be able to browse mlgb3-dev2.bodleian.ox.ac.uk.
+
+Database connection
+-------------------
+
+For production, in mlgb.indexer.connection update the database username and password
 
