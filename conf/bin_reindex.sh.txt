@@ -7,7 +7,6 @@ echo 'Enabling sorting by date...'
 ${buildout:bin-directory}/set_date_sort.sh $MLGBADMINPW > ${buildout:directory}/var/logs/set_date_sort.log 2>&1
 
 echo 'Generating links from author/title index to MLGB book records...'
-cd /home/mlgb/sites/mlgb/parts/index
 ${buildout:bin-directory}/set_index_book_ids > ${buildout:directory}/var/logs/IndexBookIDs.log 2>&1
 
 echo 'Stripping out HTML/XML comments so they are not found by searches...'

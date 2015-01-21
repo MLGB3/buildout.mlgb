@@ -3,8 +3,7 @@
 
 echo 'Writing PDF...'
 
-cd ${buildout:directory}/parts/jobs
-python write_static_mlgb.py
+${buildout:bin-directory}/write_static_html
 
 cd ${buildout:directory}/static/media/pdf
 
