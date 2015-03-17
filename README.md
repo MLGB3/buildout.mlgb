@@ -8,13 +8,13 @@ All re-indexing scripts (```/parts/jobs``` and ```/parts/index```) need linking 
 Create user "bodl-mlgb-svc"
 ------------------
 ```bash
-sudo useradd bodl-mlgb-srv
-sudo passwd bodl-mlgb-srv
-sudo mkdir -p /home/bodl-mlgb-srv/.ssh
+sudo useradd bodl-mlgb-svc
+sudo passwd bodl-mlgb-svc
+sudo mkdir -p /home/bodl-mlgb-svc/.ssh
 cd /home
-sudo chown -R bodl-mlgb-srv:bodl-mlgb-srv bodl-mlgb-srv/
-sudo chsh -s /bin/bash bodl-mlgb-srv
-su - bodl-mlgb-srv
+sudo chown -R bodl-mlgb-svc:bodl-mlgb-svc bodl-mlgb-svc/
+sudo chsh -s /bin/bash bodl-mlgb-svc
+su - bodl-mlgb-svc
 ssh-keygen -t rsa
 ```
 Copy and paste your key into gitlab by choosing My Profile (the grey person graphic link in the top right hand corner) then Add Public Key.
