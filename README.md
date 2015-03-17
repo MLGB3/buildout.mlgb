@@ -108,7 +108,7 @@ Setup the reboot script in the sudo crontab
 
 ```bash
 su - <sudo user>
-sudo crontab $HOME/sites/bodl-mlgb-svc/bin/cron.txt
+sudo crontab $HOME/sites/bodl-mlgb-svc/conf/cron.txt
 su - bodl-mlgb-svc
 ```
 
