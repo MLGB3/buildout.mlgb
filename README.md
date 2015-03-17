@@ -133,7 +133,8 @@ EXIT
 Import a MySQL dump into the database
 
 ```bash
-mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
+cd ~/sites/bodl-mlgb-svc
+mysql -u mlgbAdmin -p -h localhost mlgb < mlgb-database-dump.sql 
 ```
 
 
