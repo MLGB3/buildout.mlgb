@@ -5,14 +5,16 @@ Please note that MLGB currently only works on Ubuntu 12.0 with Python 2.7.3.
 
 All re-indexing scripts (```/parts/jobs``` and ```/parts/index```) need linking to the MySQLdb egg either via an entry point or buildout templating - 9.1.15 CTB
 
-Create user "mlgb"
+Create user "bodl-mlgb-svc"
 ------------------
 ```bash
-sudo adduser mlgb
-```
-```bash
-su - mlgb
-mkdir -p /home/mlgb/.ssh
+sudo useradd bodl-mlgb-srv
+sudo passwd bodl-mlgb-srv
+sudo mkdir -p /home/bodl-mlgb-srv/.ssh
+cd /home
+sudo chown -R bodl-mlgb-srv:bodl-mlgb-srv bodl-mlgb-srv/
+sudo chsh -s /bin/bash bodl-mlgb-srv
+su - bodl-mlgb-srv
 ssh-keygen -t rsa
 ```
 Copy and paste your key into gitlab by choosing My Profile (the grey person graphic link in the top right hand corner) then Add Public Key.
@@ -45,7 +47,7 @@ Setup server
 This will ask you to set a root mysql password.
 
 ```bash
-cd ~/sites/mlgb
+cd ~/sites/bodl-mlgb-svc
 sudo apt-get install $(cat ubuntu_requirements)
 ```
 
@@ -58,7 +60,7 @@ cd ~/Downloads
 wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tgz
 tar zxfv Python-2.7.3.tgz
 cd Python-2.7.3
-./configure --prefix=$HOME/python/2.7.3 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/mlgb/python/2.7.3/lib"
+./configure --prefix=$HOME/python/2.7.3 --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath=/home/bodl-mlgb-svc/python/2.7.3/lib"
 make
 make install
 cd ~/python/2.7.3/lib/python2.7/config
@@ -83,16 +85,16 @@ mkdir eggs
 mkdir downloads
 mkdir extends
 echo "[buildout]
-eggs-directory = /home/mlgb/.buildout/eggs
-download-cache = /home/mlgb/.buildout/downloads
-extends-cache = /home/mlgb/.buildout/extends" >> ~/.buildout/default.cfg
+eggs-directory = /home/bodl-mlgb-svc/.buildout/eggs
+download-cache = /home/bodl-mlgb-svc/.buildout/downloads
+extends-cache = /home/bodl-mlgb-svc/.buildout/extends" >> ~/.buildout/default.cfg
 ```
 
 Create a virtualenv and run the buildout
 ----------------------------------------
 
 ```bash
-cd ~/sites/mlgb
+cd ~/sites/bodl-mlgb-svc
 ~/python/2.7.3/bin/virtualenv ./
 . bin/activate
 pip install zc.buildout
@@ -106,8 +108,8 @@ Setup the reboot script in the sudo crontab
 
 ```bash
 su - <sudo user>
-sudo crontab $HOME/sites/mlgb/bin/cron.txt
-su - mlgb
+sudo crontab $HOME/sites/bodl-mlgb-svc/bin/cron.txt
+su - bodl-mlgb-svc
 ```
 
 Create the database
@@ -123,7 +125,7 @@ Please see mlgbAdmin password in settings.py
 
 ```bash
 CREATE DATABASE mlgb;
-GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "mlgb";
+GRANT ALL PRIVILEGES ON mlgb.* TO "mlgbAdmin"@"localhost" IDENTIFIED BY "<password here>";
 FLUSH PRIVILEGES;
 EXIT
 ```
@@ -131,7 +133,7 @@ EXIT
 Import a MySQL dump into the database
 
 ```bash
-mysql -u mlgbAdmin -p -h localhost mlgb < mlgb-database-dump.sql
+mysql -u mlgbAdmin -p -h localhost mlgb < mlgb_db_dump.sql 
 ```
 
 
@@ -141,7 +143,7 @@ Startup script
 Run the start script:
 
 ```bash
-/home/mlgb/sites/mlgb/parts/jobs/mlgbctl start 
+/home/mlgb/sites/bodl-mlgb-svc/parts/jobs/mlgbctl start 
 ```
 
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
@@ -159,9 +161,4 @@ ufw allow 8080/tcp
 In the case of a development machine (if you've run development.cfg) you should now be able to browse to mlgb3-dev2.bodleian.ox.ac.uk:8080.
 
 If you're running a production machine you should be able to browse mlgb3-dev2.bodleian.ox.ac.uk.
-
-Database connection
--------------------
-
-For production, in mlgb.indexer.connection update the database username and password
 
