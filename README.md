@@ -36,8 +36,8 @@ Checkout the buildout
 ---------------------
 
 ```bash
-mkdir -p ~/sites/mlgb
-cd ~/sites/mlgb
+mkdir -p ~/sites/bodl-mlgb-svc
+cd ~/sites/bodl-mlgb-svc
 git clone gitlab@source.bodleian.ox.ac.uk:mlgb/buildout.mlgb.git ./
 ```
 
@@ -143,7 +143,7 @@ Startup script
 Run the start script:
 
 ```bash
-/home/mlgb/sites/bodl-mlgb-svc/parts/jobs/mlgbctl start 
+/home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/mlgbctl start 
 ```
 
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
