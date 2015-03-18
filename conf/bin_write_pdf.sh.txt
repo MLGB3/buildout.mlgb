@@ -9,6 +9,6 @@ cd ${buildout:directory}/static/media/pdf
 
 ${buildout:bin-directory}/wkhtmltopdf.sh --encoding utf8 mlgb3.html mlgb3.pdf
 
-chown mlgb mlgb3.*
-chgrp mlgb mlgb3.*
+chown ${users:buildout-user} mlgb3.*
+chgrp ${users:buildout-user} mlgb3.*
 
