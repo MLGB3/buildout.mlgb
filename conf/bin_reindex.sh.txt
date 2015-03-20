@@ -33,6 +33,6 @@ echo 'Taking archive copy of images, then resizing for web display...'
 ${buildout:bin-directory}/process_photos.sh >> ${buildout:directory}/var/logs/process_photos.log 2>&1
 
 echo 'Reindexing Solr...'
-curl http://127.0.1.1:1234/solr/books/dataimport?command=full-import > ${buildout:directory}/var/logs/solrimport.log 2>&1
-curl http://127.0.1.1:1234/solr/catalogues/dataimport?command=full-import >> ${buildout:directory}/var/logs/solrimport.log 2>&1
+curl http://${hosts:solr}:${ports:solr}/solr/books/dataimport?command=full-import > ${buildout:directory}/var/logs/solrimport.log 2>&1
+curl http://${hosts:solr}:${ports:solr}/solr/catalogues/dataimport?command=full-import >> ${buildout:directory}/var/logs/solrimport.log 2>&1
 
