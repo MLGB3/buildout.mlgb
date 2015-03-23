@@ -12,7 +12,7 @@ indir=${buildout:directory}/static/media/photos
 outdir=${buildout:directory}/static/media/photos_archive
 
 new_width=1000
-archive_file_owner=mlgb
+archive_file_owner=${users:buildout-user}
 
 cd $indir
 for f in $(ls | grep -v "\.thumb\.")
