@@ -1,9 +1,31 @@
 Installation
 ============
 
-Please note that MLGB currently only works on Ubuntu 12.0 with Python 2.7.3.
+
+Introduction
+------------
+
+Please note that MLGB currently only works on Ubuntu 12.0 with Python 2.7.3 and Solr 1.3.0. Other versions can be found in ```versions.cfg```.
 
 All re-indexing scripts (```/parts/jobs``` and ```/parts/index```) need linking to the MySQLdb egg either via an entry point or buildout templating - 9.1.15 CTB
+
+The buildout relies on the following git repositories auto-checkedout by mr.developer in the buildout:
+
+```bash
+mlgb.cron = git gitlab@source.bodleian.ox.ac.uk:mlgb/mlgb.cron.git egg=false
+mlgb.indexer = git gitlab@source.bodleian.ox.ac.uk:mlgb/mlgb.indexer.git
+mysite = git gitlab@source.bodleian.ox.ac.uk:mlgb/mysite.git path=${buildout:directory}
+# media and templates dir 
+static = git gitlab@source.bodleian.ox.ac.uk:mlgb/mlgb.static.git egg=false path=${buildout:directory}
+# solr conf
+solr = git gitlab@source.bodleian.ox.ac.uk:mlgb/solr.git egg=false path=${buildout:directory}
+```
+
+The ```mlgb.cron``` repository consists of nightly run cron jobs.
+The ```mlgb.indexer``` repository consists of indexing scripts.
+The ```mysite``` repository consists of the MLGB3 codebase.
+The ```static``` repository consists of static media files such as images and templates.
+The ```solr``` repository consists of schema XML for the ```books``` and ```catalogue``` Solr cores. This is rsync'ed to the solr home directory after checking out.
 
 Create user "bodl-mlgb-svc"
 ------------------
