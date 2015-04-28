@@ -128,14 +128,15 @@ Setup the reboot script in the sudo crontab
 
 ```bash
 su - <sudo user>
-sudo crontab $HOME/sites/bodl-mlgb-svc/conf/cron.txt
-su - bodl-mlgb-svc
+sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/conf/cron.txt
 ```
 
 Setup the indexing cron jobs and database dumps:
 
 ```bash
-sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/cron.txt; sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/crondump.txt
+su - <sudo user>
+sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/cron.txt
+sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/crondump.txt
 ```
 Create the database
 -------------------
