@@ -91,7 +91,6 @@ wget https://pypi.python.org/packages/source/d/distribute/distribute-0.7.3.zip
 unzip distribute-0.7.3.zip
 cd distribute-0.7.3
 ~/python/2.7.3/bin/python setup.py install
-~/python/2.7.3/bin/python distribute_setup.py
 ~/python/2.7.3/bin/easy_install pip
 ~/python/2.7.3/bin/pip install virtualenv
 ```
@@ -108,7 +107,7 @@ mkdir extends
 echo "[buildout]
 eggs-directory = /home/bodl-mlgb-svc/.buildout/eggs
 download-cache = /home/bodl-mlgb-svc/.buildout/downloads
-extends-cache = /home/bodl-mlgb-svc/.buildout/extends" >> ~/.buildout/default.cfg
+extends-cache = /home/bodl-mlgb-svc/.buildout/extends" > ~/.buildout/default.cfg
 ```
 
 Create a virtualenv and run the buildout
