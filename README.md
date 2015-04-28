@@ -132,6 +132,11 @@ sudo crontab $HOME/sites/bodl-mlgb-svc/conf/cron.txt
 su - bodl-mlgb-svc
 ```
 
+Setup the indexing cron jobs and database dumps:
+
+```bash
+sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/cron.txt; sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/crondump.txt
+```
 Create the database
 -------------------
 
