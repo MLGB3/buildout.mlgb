@@ -167,10 +167,17 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb-database-dump.sql
 Startup script
 --------------
 
-Run the start script:
+Run the start script (for development):
 
 ```bash
 /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/bin/mlgbctl start 
+```
+
+Or sudo run the start script if you're on production and port 80:
+
+```bash
+su - <sudo user>
+sudo /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/bin/mlgbctl start 
 ```
 
 Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
