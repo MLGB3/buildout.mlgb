@@ -144,7 +144,7 @@ Create the database
 mysql root password as given during installation.
 
 ```bash
-mysql --uroot -p
+mysql -uroot -p
 ```
 
 Please see mlgbAdmin password in settings.py
