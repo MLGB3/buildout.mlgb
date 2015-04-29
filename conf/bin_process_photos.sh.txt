@@ -13,6 +13,7 @@ outdir=${buildout:directory}/static/media/photos_archive
 
 new_width=1000
 archive_file_owner=${users:buildout-user}
+$archive_file_group=${groups:buildout-group}
 
 cd $indir
 for f in $(ls | grep -v "\.thumb\.")
@@ -29,7 +30,7 @@ do
       convert $f -resize ${buildout:dollar}{new_width}\> $f  # the \> flag means 'only shrink, never enlarge'
 
       chown $archive_file_owner $archive_file
-      chgrp $archive_file_owner $archive_file
+      chgrp $archive_file_group $archive_file
     fi
   fi
 done
