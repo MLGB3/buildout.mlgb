@@ -180,7 +180,7 @@ su - <sudo user>
 sudo /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/bin/mlgbctl start 
 ```
 
-Other options for mlgbctl are stop and startnoindex (the latter starts solr and apache only without running the reindex scripts).
+Other options for mlgbctl are ```stop``` and ```startnoindex``` (the latter starts solr and apache only without running the reindex scripts).
 
 
 Port 8080
