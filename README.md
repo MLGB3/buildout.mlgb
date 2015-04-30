@@ -126,12 +126,13 @@ buildout -c development.cfg
 Setup the reboot script in the sudo crontab
 -------------------------------------------
 
-Setup the re-indexing cron jobs and reboot script:
+Setup the re-indexing cron jobs (for app user) and reboot script (for sudo):
 
 ```bash
 su - <sudo user>
 sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/cron.txt
-sudo crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/crondump.txt
+sudo su - bodl-mlgb-svc
+crontab /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/parts/jobs/crondump.txt
 ```
 Create the database
 -------------------
