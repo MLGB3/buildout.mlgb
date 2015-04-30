@@ -163,9 +163,10 @@ mysql -u mlgbAdmin -p -h localhost mlgb < mlgb-database-dump.sql
 Startup script
 --------------
 
-Run the start script (for development):
+Add www-data to adusers group and run the start script (for development):
 
 ```bash
+usermod -a -G adusers www-data
 /home/bodl-mlgb-svc/sites/bodl-mlgb-svc/bin/mlgbctl start 
 ```
 
