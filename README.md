@@ -4,16 +4,16 @@ Introduction
 The buildout relies on the following git repositories auto-checkedout by mr.developer in the buildout:
 
 ```bash
-mlgb.cron = git@github.com:MLGB3/mlgb.cron.git egg=false
-mlgb.indexer = git git@github.com:MLGB3/mlgb.indexer.git
+mlgb.cron = git https://github.com/MLGB3/mlgb.cron.git egg=false
+mlgb.indexer = git https://github.com/MLGB3/mlgb.indexer.git
 
-mysite = git git@github.com:MLGB3/mysite.git path=${buildout:directory}
+mysite = git https://github.com/MLGB3/mysite.git path=${buildout:directory}
 
 # media and templates dir 
-static = git git@github.com:MLGB3/mlgb.static.git egg=false path=${buildout:directory}
+static = git https://github.com/MLGB3/mlgb.static.git rev=new-design egg=false path=${buildout:directory}
 
 # solr conf
-solr = git git@github.com:MLGB3/solr.git egg=false path=${buildout:directory}
+solr = git https://github.com/MLGB3/solr.git egg=false path=${buildout:directory}
 ```
 
 The ```mlgb.cron``` repository consists of nightly run cron jobs.
