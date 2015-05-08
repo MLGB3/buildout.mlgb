@@ -62,7 +62,7 @@ Checkout the buildout
 ```bash
 mkdir -p ~/sites/bodl-mlgb-svc
 cd ~/sites/bodl-mlgb-svc
-git clone gitlab@source.bodleian.ox.ac.uk:mlgb/buildout.mlgb.git ./
+git clone git@github.com:MLGB3/buildout.mlgb.git ./
 ```
 
 Setup server
